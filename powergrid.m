@@ -1,6 +1,8 @@
 % Simulation file
 clear all; clc;
 
+%hacked
+
 global global_info;
 global_info.counter = 0; 
 global_info.STOP_AT = 150; 
