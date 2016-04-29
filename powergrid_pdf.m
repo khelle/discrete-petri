@@ -2,9 +2,9 @@
 
 function [png] = powergrid_pdf()
 
-png.PN_name = 'Ex-29-1: token selection from a single input place';
-png.set_of_Ps = {'pStart', 'pCombined', 'pA', 'pA_or_B', ...
-                 'pA_or_B_Preferred','pA_and_B'};
+png.PN_name = 'Powergrid Simulation';
+png.set_of_Ps = {'JNW','RBL','ZAG','KDN','ANI','GUA','WRZ','BLE','SIK','KAW','KLP',...
+                 'KLD','PAN','PRA','OLE','SDW','DBR','LBN','HER','KSC','BKW','KLT'};
              
 png.set_of_Ts = {'tColor', 'tA', 'tA_or_B', 'tA_or_B_Preferred','tA_and_B'};
 
