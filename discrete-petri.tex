@@ -1,0 +1,135 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[OT4]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+\geometry{
+	a4paper,
+    left=1in,
+    right=1in,
+    top=1.5in,
+    bottom=1.5in
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand{\baselinestretch}{1.75} 
+
+\titlespacing*{\section} {0pt}{0.3in}{0.3in}
+\titlespacing*{\subsection} {0pt}{0.3in}{0.3in}
+
+\title{Petri Networks\\Modeling, simulation, and performance analysis of discrete event systems used in electrical engineering}
+
+\author{\\Authors:\\ Kamil Jamroz,\\ Michal Raton,\\ Adam Zelazowski\\}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
+% -------------------------------------------------------------
+%
+\section{Foreword}  
+
+\paragraph{}
+For our project in "Modeling, simulation, and performance analysis of discrete event systems with Petri Nets", we have chosen to simulate a part of powergrid used in Silesian district in Poland. Our statistical analysis takes into account both physical properties of cables and real topology on which powergrid bases on. The reason for chosing this project is the fact we believe petri nets are perfect tools for simulation such scenario, and we would like to evalute if this statement will hold true throughout the project. This report will be divided in several parts and cover input data, simulation files, diagrams and received results.
+
+% -------------------------------------------------------------
+%
+\section{Introduction}   
+
+\paragraph{}
+Rising consumption of electrical energy and its strategic meaning in economy of highly developed countries has translated into creation of necessity to guarantee safety of its supply to customers. The fundamental limitations regarding the capacity of modern electrical networks are set because of physical properties of materials used in their construction. Each material has its own set of properties and cost of use, both of which have to be taken into consideration by electrical engineers in phase of designing new and maitaining existing powergrid connections. For the purpose of current document we had chosen a part of the power grid existing in Poland and simulated what would happen if links between parts of the grid were shutdown - where would the power go and how would it affect the state of the network. Specifically, we tried to simulate how much would cables extend if more power were transmited through them and checked whether there exists possibilities of accidents.
+
+\subsection{Problem definition}
+
+\paragraph{}
+The biggest problem connected to creation of new and maintaining existing powergrids is the fact that depending on the load in the given unit of time the physical reaction of powergrid infrastructure can be different. The voltage transported through the cables make huge impact on them changing their characteristics such as length, temperature and others. What's more they are also dependant on external factors - the time of the day, the season, air temperature etc. The plethora of scenarios that must be taken into consideration makes fixing powergrids hard and expensive.
+
+\subsection{Goals}                                                                          
+\paragraph{}
+The goal of this project is to check whether petri networks are well-fit tool for purpose of modeling and evaluating electrical networks. We will decide on this depending on the results we get from simulating existing powergrid. 
+
+\subsection{Sources}
+
+\paragraph{}
+
+\subsection{Methods}
+
+\paragraph{}
+As a tool for modeling and simulation the existing powergrid we will use Petri networks. The places will represent customers while transitions will represent cables. The markers will be used as a mean of representing electrical movement. The tool we will use for this project is GPenSIM created by Reggie Davidrajuh [2]. The details of used method will be described further in its own section.
+
+% -------------------------------------------------------------
+%
+\section{Theory}
+
+\paragraph{}
+\textbf{Thermal expansion} is the tendency of matter to change in shape, area, and volume in response to a change in temperature, through heat transfer. The coefficient of thermal expansion describes how the size of an object changes with a change in temperature. Specifically, it measures the fractional change in size per degree change in temperature at a constant pressure. [1]
+
+% -------------------------------------------------------------
+%
+\section{Methods}
+
+\paragraph{}
+Text Text Text
+
+\subsection{Power grid}
+\subsection{Petri-Net model}
+
+% -------------------------------------------------------------
+%
+\section{Matlab approach}
+
+\paragraph{}
+Text Text Text
+
+\subsection{Main Simulation File}
+\subsection{Loading real data}
+\subsection{Token generator and coloring}
+
+% -------------------------------------------------------------
+%                                      
+\section{Testing, analysis and Results}   
+
+\paragraph{}
+Text Text Text
+
+% -------------------------------------------------------------
+%
+\section{Challenges and solutions}    
+
+\paragraph{}
+Text Text Text
+
+% -------------------------------------------------------------
+%
+\section{Conclusion}
+
+\paragraph{}
+Text Text Text
+
+% -------------------------------------------------------------
+%
+%\listoffigures
+
+% -------------------------------------------------------------
+%
+%\listoftables
+
+% -------------------------------------------------------------
+%
+%\bibliography{}
+
+\end{document}
