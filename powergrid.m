@@ -7,10 +7,10 @@ global global_info;
 global_info.counter = 0; 
 global_info.STOP_AT = 150; 
 
-pns = pnstruct('single_inputplace_pdf');
+pns = pnstruct('powergrid_pdf');
 
 %%%% initial dynamics %%%%
-dyn.m0 = {'pStart', 20}; 
+dyn.m0 = {'ANI', 1}; 
 dyn.ft = {'allothers',1};
 pni = initialdynamics(pns, dyn);
 
