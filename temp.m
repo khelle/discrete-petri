@@ -3,8 +3,56 @@
 function [png] = powergrid_pdf()
 
 
-%lengths of cables
 
+
+
+
+
+
+
+
+
+
+cableNames = { ...
+	'tWRZ_2_HER', 'tHER_2_WRZ', % todo
+	'tHER_2_LBN', 'tLBN_2_HER', % Herby - Lubliniec %
+	'tWRZ_2_BLE', 'tBLE_2_WRZ',
+	'tWRZ_2_KAW', 'tKAW_2_WRZ', % todo: DODAĆ ARC	
+	'tWRZ_2_PRJ', 'tPRJ_2_WRZ', %TODO
+	'tPRJ_2_MIJ', 'tMIJ_2_PRJ',%Poraj - Mijaczów	19,708
+	'tMIJ_2_POH', 'tPOH_2_MIJ', 
+	'tWRZ_2_RAK1', 'tRAK1_2_WRZ',
+	'tWRZ_2_RAK2', 'tRAK2_2_WRZ',
+	'tWRZ_2_GUA', 'tGUA_2_WRZ', 
+	
+	} 
+	
+%cableTypes = { ...
+	'AFL6 12ro', 'AFL6 12ro',
+	'AFL6 120', 'AFL6 120',
+	'AFL6 240', 'AFL6 240', 
+	'AFL6 240', 'AFL6 240', 
+	'AFL6 12ro', 'AFL6 12ro',... 
+	'AFL6 120', 'AFL6 120',
+	'AFL6 120', 'AFL6 120',
+	'AFL6 120', 'AFL6 120',
+	
+}
+
+% lines in m 
+cableLengths = [ ...
+	23026, 23026,
+	13859, 13859,
+	4185, 4185,
+	9328, 9328,
+	9552, 9552,
+	19708,19708,
+	8360, 8360,
+	3320, 3320,
+	3355, 3355,
+	4420, 4420,
+	
+]
 
 png.PN_name = 'Powergrid Simulation';
 png.set_of_Ps = {...
