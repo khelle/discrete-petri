@@ -1,0 +1,32 @@
+function [fire, transition] = COMMON_PRE(transition)
+
+% load data
+load data.mat;
+global global_info ;
+
+
+
+
+% search for data of particular cable in hashmaps
+	cableName = transition.name;
+	cableLength = CableName2CableLength(cableName);
+	cableTypeName = CableName2CableType(cableName);
+	cableThermalExpansionFactor = CableType2ThermalExpansionFactors(cableTypeName);
+	cableResistanceIn20Cels  = CableType2CableResistanceIn20Cels(cableTypeName);
+	cableMassPerKm = CableType2CableMassPerKm(cableTypeName);
+	
+	%calculate how cable lengthens
+	cableMass = calculateCableMass(cableLength, cableMassPerKm);
+	cableResistanceAtTemp = calculateTemperatureResistance(aluminiumTemperatureResistanceCoefficient, cableResistanceIn20Cels, global_info.EXTERNAL_TEMPERATURE - global_info.BASE_TEMPERATURE);
+	heatChange = 3 * electricCurrent * electricCurrent* cableResistanceAtTemp;
+	temperatureChange = heatChange / cableMass * specificHeat;
+	newCableLength = calculateCableLength(cableLength, cableThermalExpansionFactor, temperatureChange)
+
+
+switch 	trasition.name
+	case 'tANI_2_HCW'
+		s = 'trolololo'
+	end;
+
+end;
+
