@@ -1,0 +1,407 @@
+state "WRZ" as WRZ <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "ANI" as ANI <<Place>>
+state "PRJ" as PRJ <<Place>>
+state "MIJ" as MIJ <<Place>>
+state "MIJ" as MIJ <<Place>>
+state "PRJ" as PRJ <<Place>>
+state "MIJ" as MIJ <<Place>>
+state "POH" as POH <<Place>>
+state "POH" as POH <<Place>>
+state "MIJ" as MIJ <<Place>>
+state "POH" as POH <<Place>>
+state "KOT" as KOT <<Place>>
+state "KOT" as KOT <<Place>>
+state "KOT" as KOT <<Place>>
+state "KOT" as KOT <<Place>>
+state "ZWA" as ZWA <<Place>>
+state "ZWA" as ZWA <<Place>>
+state "KOT" as KOT <<Place>>
+state "ZWA" as ZWA <<Place>>
+state "SKC" as SKC <<Place>>
+state "SKC" as SKC <<Place>>
+state "ZWA" as ZWA <<Place>>
+state "SKC" as SKC <<Place>>
+state "KNC" as KNC <<Place>>
+state "KNC" as KNC <<Place>>
+state "SKC" as SKC <<Place>>
+state "KNC" as KNC <<Place>>
+state "JLK" as JLK <<Place>>
+state "JLK" as JLK <<Place>>
+state "KNC" as KNC <<Place>>
+state "RED" as RED <<Place>>
+state "RUD" as RUD <<Place>>
+state "RUD" as RUD <<Place>>
+state "RED" as RED <<Place>>
+state "PAN" as PAN <<Place>>
+state "KLO" as KLO <<Place>>
+state "KLO" as KLO <<Place>>
+state "KLO" as KLO <<Place>>
+state "PRA" as PRA <<Place>>
+state "PAN" as PAN <<Place>>
+state "PAN" as PAN <<Place>>
+state "PRA" as PRA <<Place>>
+state "PRA" as PRA <<Place>>
+state "OLE" as OLE <<Place>>
+state "OLE" as OLE <<Place>>
+state "PRA" as PRA <<Place>>
+state "OLE" as OLE <<Place>>
+state "SOW" as SOW <<Place>>
+state "SOW" as SOW <<Place>>
+state "OLE" as OLE <<Place>>
+state "SOW" as SOW <<Place>>
+state "DBR" as DBR <<Place>>
+state "DBR" as DBR <<Place>>
+state "SOW" as SOW <<Place>>
+state "DBR" as DBR <<Place>>
+state "LBN" as LBN <<Place>>
+state "LBN" as LBN <<Place>>
+state "DBR" as DBR <<Place>>
+state "LBN" as LBN <<Place>>
+state "HER" as HER <<Place>>
+state "HER" as HER <<Place>>
+state "LBN" as LBN <<Place>>
+state "HER" as HER <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "KLO" as KLO <<Place>>
+state "KLP" as KLP <<Place>>
+state "KLP" as KLP <<Place>>
+state "KLO" as KLO <<Place>>
+state "KLO" as KLO <<Place>>
+state "ZAG" as ZAG <<Place>>
+state "ZAG" as ZAG <<Place>>
+state "KLO" as KLO <<Place>>
+state "ZAG" as ZAG <<Place>>
+state "KDN" as KDN <<Place>>
+state "KDN" as KDN <<Place>>
+state "ZAG" as ZAG <<Place>>
+state "KDN" as KDN <<Place>>
+state "ANI" as ANI <<Place>>
+state "ANI" as ANI <<Place>>
+state "KDN" as KDN <<Place>>
+state "KLP" as KLP <<Place>>
+state "KAW" as KAW <<Place>>
+state "KAW" as KAW <<Place>>
+state "KLP" as KLP <<Place>>
+state "KAW" as KAW <<Place>>
+state "BLE" as BLE <<Place>>
+state "BLE" as BLE <<Place>>
+state "KAW" as KAW <<Place>>
+state "KAW" as KAW <<Place>>
+state "SIK" as SIK <<Place>>
+state "SIK" as SIK <<Place>>
+state "KAW" as KAW <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "HCW" as HCW <<Place>>
+state "HCW" as HCW <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "RUD" as RUD <<Place>>
+state "RUD" as RUD <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "JLK" as JLK <<Place>>
+state "JLK" as JLK <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "BLE" as BLE <<Place>>
+state "BLE" as BLE <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "GUA" as GUA <<Place>>
+state "GUA" as GUA <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "PRJ" as PRJ <<Place>>
+state "PRJ" as PRJ <<Place>>
+state "WRZ" as WRZ <<Place>>
+state "ANI" as ANI <<Place>>
+state "HCW" as HCW <<Place>>
+state "HCW" as HCW <<Place>>
+state "ANI" as ANI <<Place>>
+state "ANI" as ANI <<Place>>
+state "SIK" as SIK <<Place>>
+state "SIK" as SIK <<Place>>
+state "ANI" as ANI <<Place>>
+state "ANI" as ANI <<Place>>
+state "RED" as RED <<Place>>
+state "RED" as RED <<Place>>
+state "ANI" as ANI <<Place>>
+state "ANI" as ANI <<Place>>
+state "GUA" as GUA <<Place>>
+state "GUA" as GUA <<Place>>
+state "ANI" as ANI <<Place>>
+state "tGEN_3" as tGEN_3 <<Transition>>
+state "tGEN_4" as tGEN_4 <<Transition>>
+state "tGEN_AT1" as tGEN_AT1 <<Transition>>
+state "tPRJ_2_MIJ" as tPRJ_2_MIJ <<Transition>>
+state "tPRJ_2_MIJ" as tPRJ_2_MIJ <<Transition>>
+state "tMIJ_2_PRJ" as tMIJ_2_PRJ <<Transition>>
+state "tMIJ_2_PRJ" as tMIJ_2_PRJ <<Transition>>
+state "tMIJ_2_POH" as tMIJ_2_POH <<Transition>>
+state "tMIJ_2_POH" as tMIJ_2_POH <<Transition>>
+state "tPOH_2_MIJ" as tPOH_2_MIJ <<Transition>>
+state "tPOH_2_MIJ" as tPOH_2_MIJ <<Transition>>
+state "tPOH_2_KOT" as tPOH_2_KOT <<Transition>>
+state "tPOH_2_KOT" as tPOH_2_KOT <<Transition>>
+state "tKOT_2_POH" as tKOT_2_POH <<Transition>>
+state "tPOH_2_KOT" as tPOH_2_KOT <<Transition>>
+state "tKOT_2_ZWA" as tKOT_2_ZWA <<Transition>>
+state "tKOT_2_ZWA" as tKOT_2_ZWA <<Transition>>
+state "tZWA_2_KOT" as tZWA_2_KOT <<Transition>>
+state "tZWA_2_KOT" as tZWA_2_KOT <<Transition>>
+state "tZWA_2_SKC" as tZWA_2_SKC <<Transition>>
+state "tZWA_2_SKC" as tZWA_2_SKC <<Transition>>
+state "tSKC_2_ZWA" as tSKC_2_ZWA <<Transition>>
+state "tSKC_2_ZWA" as tSKC_2_ZWA <<Transition>>
+state "tSKC_2_KNC" as tSKC_2_KNC <<Transition>>
+state "tSKC_2_KNC" as tSKC_2_KNC <<Transition>>
+state "tKNC_2_SKC" as tKNC_2_SKC <<Transition>>
+state "tKNC_2_SKC" as tKNC_2_SKC <<Transition>>
+state "tKNC_2_JLK" as tKNC_2_JLK <<Transition>>
+state "tKNC_2_JLK" as tKNC_2_JLK <<Transition>>
+state "tJLK_2_KNC" as tJLK_2_KNC <<Transition>>
+state "tJLK_2_KNC" as tJLK_2_KNC <<Transition>>
+state "tRED_2_RUD" as tRED_2_RUD <<Transition>>
+state "tRED_2_RUD" as tRED_2_RUD <<Transition>>
+state "tRUD_2_RED" as tRUD_2_RED <<Transition>>
+state "tRUD_2_RED" as tRUD_2_RED <<Transition>>
+state "tPAN_2_KLO" as tPAN_2_KLO <<Transition>>
+state "tPAN_2_KLO" as tPAN_2_KLO <<Transition>>
+state "tKLO_2_PAN" as tKLO_2_PAN <<Transition>>
+state "tKLO_2_PAN" as tKLO_2_PAN <<Transition>>
+state "tPRA_2_PAN" as tPRA_2_PAN <<Transition>>
+state "tPRA_2_PAN" as tPRA_2_PAN <<Transition>>
+state "tPAN_2_PRA" as tPAN_2_PRA <<Transition>>
+state "tPAN_2_PRA" as tPAN_2_PRA <<Transition>>
+state "tPRA_2_OLE" as tPRA_2_OLE <<Transition>>
+state "tPRA_2_OLE" as tPRA_2_OLE <<Transition>>
+state "tOLE_2_PRA" as tOLE_2_PRA <<Transition>>
+state "tOLE_2_PRA" as tOLE_2_PRA <<Transition>>
+state "tOLE_2_SOW" as tOLE_2_SOW <<Transition>>
+state "tOLE_2_SOW" as tOLE_2_SOW <<Transition>>
+state "tSOW_2_OLE" as tSOW_2_OLE <<Transition>>
+state "tSOW_2_OLE" as tSOW_2_OLE <<Transition>>
+state "tSOW_2_DBR" as tSOW_2_DBR <<Transition>>
+state "tSOW_2_DBR" as tSOW_2_DBR <<Transition>>
+state "tDBR_2_SOW" as tDBR_2_SOW <<Transition>>
+state "tDBR_2_SOW" as tDBR_2_SOW <<Transition>>
+state "tDBR_2_LBN" as tDBR_2_LBN <<Transition>>
+state "tDBR_2_LBN" as tDBR_2_LBN <<Transition>>
+state "tLBN_2_DBR" as tLBN_2_DBR <<Transition>>
+state "tLBN_2_DBR" as tLBN_2_DBR <<Transition>>
+state "tLBN_2_HER" as tLBN_2_HER <<Transition>>
+state "tLBN_2_HER" as tLBN_2_HER <<Transition>>
+state "tHER_2_LBN" as tHER_2_LBN <<Transition>>
+state "tHER_2_LBN" as tHER_2_LBN <<Transition>>
+state "tHER_2_WRZ" as tHER_2_WRZ <<Transition>>
+state "tHER_2_WRZ" as tHER_2_WRZ <<Transition>>
+state "tWRZ_2_HER" as tWRZ_2_HER <<Transition>>
+state "tWRZ_2_HER" as tWRZ_2_HER <<Transition>>
+state "tKLO_2_KLP" as tKLO_2_KLP <<Transition>>
+state "tKLO_2_KLP" as tKLO_2_KLP <<Transition>>
+state "tKLP_2_KLO" as tKLP_2_KLO <<Transition>>
+state "tKLP_2_KLO" as tKLP_2_KLO <<Transition>>
+state "tKLO_2_ZAG" as tKLO_2_ZAG <<Transition>>
+state "tKLO_2_ZAG" as tKLO_2_ZAG <<Transition>>
+state "tZAG_2_KLO" as tZAG_2_KLO <<Transition>>
+state "tZAG_2_KLO" as tZAG_2_KLO <<Transition>>
+state "tZAG_2_KDN" as tZAG_2_KDN <<Transition>>
+state "tZAG_2_KDN" as tZAG_2_KDN <<Transition>>
+state "tKDN_2_ZAG" as tKDN_2_ZAG <<Transition>>
+state "tKDN_2_ZAG" as tKDN_2_ZAG <<Transition>>
+state "tKDN_2_ANI" as tKDN_2_ANI <<Transition>>
+state "tKDN_2_ANI" as tKDN_2_ANI <<Transition>>
+state "tANI_2_KDN" as tANI_2_KDN <<Transition>>
+state "tANI_2_KDN" as tANI_2_KDN <<Transition>>
+state "tKLP_2_KAW" as tKLP_2_KAW <<Transition>>
+state "tKLP_2_KAW" as tKLP_2_KAW <<Transition>>
+state "tKAW_2_KLP" as tKAW_2_KLP <<Transition>>
+state "tKAW_2_KLP" as tKAW_2_KLP <<Transition>>
+state "tKAW_2_BLE" as tKAW_2_BLE <<Transition>>
+state "tKAW_2_BLE" as tKAW_2_BLE <<Transition>>
+state "tBLE_2_KAW" as tBLE_2_KAW <<Transition>>
+state "tBLE_2_KAW" as tBLE_2_KAW <<Transition>>
+state "tKAW_2_SIK" as tKAW_2_SIK <<Transition>>
+state "tKAW_2_SIK" as tKAW_2_SIK <<Transition>>
+state "tSIK_2_KAW" as tSIK_2_KAW <<Transition>>
+state "tSIK_2_KAW" as tSIK_2_KAW <<Transition>>
+state "tWRZ_2_HCW" as tWRZ_2_HCW <<Transition>>
+state "tWRZ_2_HCW" as tWRZ_2_HCW <<Transition>>
+state "tHCW_2_WRZ" as tHCW_2_WRZ <<Transition>>
+state "tHCW_2_WRZ" as tHCW_2_WRZ <<Transition>>
+state "tWRZ_2_RUD" as tWRZ_2_RUD <<Transition>>
+state "tWRZ_2_RUD" as tWRZ_2_RUD <<Transition>>
+state "tRUD_2_WRZ" as tRUD_2_WRZ <<Transition>>
+state "tRUD_2_WRZ" as tRUD_2_WRZ <<Transition>>
+state "tWRZ_2_JLK" as tWRZ_2_JLK <<Transition>>
+state "tWRZ_2_JLK" as tWRZ_2_JLK <<Transition>>
+state "tJLK_2_WRZ" as tJLK_2_WRZ <<Transition>>
+state "tJLK_2_WRZ" as tJLK_2_WRZ <<Transition>>
+state "tWRZ_2_BLE" as tWRZ_2_BLE <<Transition>>
+state "tWRZ_2_BLE" as tWRZ_2_BLE <<Transition>>
+state "tBLE_2_WRZ" as tBLE_2_WRZ <<Transition>>
+state "tBLE_2_WRZ" as tBLE_2_WRZ <<Transition>>
+state "tWRZ_2_GUA" as tWRZ_2_GUA <<Transition>>
+state "tWRZ_2_GUA" as tWRZ_2_GUA <<Transition>>
+state "tGUA_2_WRZ" as tGUA_2_WRZ <<Transition>>
+state "tGUA_2_WRZ" as tGUA_2_WRZ <<Transition>>
+state "tWRZ_2_PRJ" as tWRZ_2_PRJ <<Transition>>
+state "tWRZ_2_PRJ" as tWRZ_2_PRJ <<Transition>>
+state "tPRJ_2_WRZ" as tPRJ_2_WRZ <<Transition>>
+state "tPRJ_2_WRZ" as tPRJ_2_WRZ <<Transition>>
+state "tANI_2_HCW" as tANI_2_HCW <<Transition>>
+state "tANI_2_HCW" as tANI_2_HCW <<Transition>>
+state "tHCW_2_ANI" as tHCW_2_ANI <<Transition>>
+state "tHCW_2_ANI" as tHCW_2_ANI <<Transition>>
+state "tANI_2_SIK" as tANI_2_SIK <<Transition>>
+state "tANI_2_SIK" as tANI_2_SIK <<Transition>>
+state "tSIK_2_ANI" as tSIK_2_ANI <<Transition>>
+state "tSIK_2_ANI" as tSIK_2_ANI <<Transition>>
+state "tANI_2_RED" as tANI_2_RED <<Transition>>
+state "tANI_2_RED" as tANI_2_RED <<Transition>>
+state "tRED_2_ANI" as tRED_2_ANI <<Transition>>
+state "tRED_2_ANI" as tRED_2_ANI <<Transition>>
+state "tANI_2_GUA" as tANI_2_GUA <<Transition>>
+state "tANI_2_GUA" as tANI_2_GUA <<Transition>>
+state "tGUA_2_ANI" as tGUA_2_ANI <<Transition>>
+state "tGUA_2_ANI" as tGUA_2_ANI <<Transition>>
+
+
+tGEN_3 --> WRZ
+tGEN_4 --> WRZ
+tGEN_AT1 --> ANI
+PRJ --> tPRJ_2_MIJ
+tPRJ_2_MIJ --> MIJ
+MIJ --> tMIJ_2_PRJ
+tMIJ_2_PRJ --> PRJ
+MIJ --> tMIJ_2_POH
+tMIJ_2_POH --> POH
+POH --> tPOH_2_MIJ
+tPOH_2_MIJ --> MIJ
+POH --> tPOH_2_KOT
+tPOH_2_KOT --> KOT
+KOT --> tKOT_2_POH
+tPOH_2_KOT --> KOT
+KOT --> tKOT_2_ZWA
+tKOT_2_ZWA --> ZWA
+ZWA --> tZWA_2_KOT
+tZWA_2_KOT --> KOT
+ZWA --> tZWA_2_SKC
+tZWA_2_SKC --> SKC
+SKC --> tSKC_2_ZWA
+tSKC_2_ZWA --> ZWA
+SKC --> tSKC_2_KNC
+tSKC_2_KNC --> KNC
+KNC --> tKNC_2_SKC
+tKNC_2_SKC --> SKC
+KNC --> tKNC_2_JLK
+tKNC_2_JLK --> JLK
+JLK --> tJLK_2_KNC
+tJLK_2_KNC --> KNC
+RED --> tRED_2_RUD
+tRED_2_RUD --> RUD
+RUD --> tRUD_2_RED
+tRUD_2_RED --> RED
+PAN --> tPAN_2_KLO
+tPAN_2_KLO --> KLO
+KLO --> tKLO_2_PAN
+tKLO_2_PAN --> KLO
+PRA --> tPRA_2_PAN
+tPRA_2_PAN --> PAN
+PAN --> tPAN_2_PRA
+tPAN_2_PRA --> PRA
+PRA --> tPRA_2_OLE
+tPRA_2_OLE --> OLE
+OLE --> tOLE_2_PRA
+tOLE_2_PRA --> PRA
+OLE --> tOLE_2_SOW
+tOLE_2_SOW --> SOW
+SOW --> tSOW_2_OLE
+tSOW_2_OLE --> OLE
+SOW --> tSOW_2_DBR
+tSOW_2_DBR --> DBR
+DBR --> tDBR_2_SOW
+tDBR_2_SOW --> SOW
+DBR --> tDBR_2_LBN
+tDBR_2_LBN --> LBN
+LBN --> tLBN_2_DBR
+tLBN_2_DBR --> DBR
+LBN --> tLBN_2_HER
+tLBN_2_HER --> HER
+HER --> tHER_2_LBN
+tHER_2_LBN --> LBN
+HER --> tHER_2_WRZ
+tHER_2_WRZ --> WRZ
+WRZ --> tWRZ_2_HER
+tWRZ_2_HER --> WRZ
+KLO --> tKLO_2_KLP
+tKLO_2_KLP --> KLP
+KLP --> tKLP_2_KLO
+tKLP_2_KLO --> KLO
+KLO --> tKLO_2_ZAG
+tKLO_2_ZAG --> ZAG
+ZAG --> tZAG_2_KLO
+tZAG_2_KLO --> KLO
+ZAG --> tZAG_2_KDN
+tZAG_2_KDN --> KDN
+KDN --> tKDN_2_ZAG
+tKDN_2_ZAG --> ZAG
+KDN --> tKDN_2_ANI
+tKDN_2_ANI --> ANI
+ANI --> tANI_2_KDN
+tANI_2_KDN --> KDN
+KLP --> tKLP_2_KAW
+tKLP_2_KAW --> KAW
+KAW --> tKAW_2_KLP
+tKAW_2_KLP --> KLP
+KAW --> tKAW_2_BLE
+tKAW_2_BLE --> BLE
+BLE --> tBLE_2_KAW
+tBLE_2_KAW --> KAW
+KAW --> tKAW_2_SIK
+tKAW_2_SIK --> SIK
+SIK --> tSIK_2_KAW
+tSIK_2_KAW --> KAW
+WRZ --> tWRZ_2_HCW
+tWRZ_2_HCW --> HCW
+HCW --> tHCW_2_WRZ
+tHCW_2_WRZ --> WRZ
+WRZ --> tWRZ_2_RUD
+tWRZ_2_RUD --> RUD
+RUD --> tRUD_2_WRZ
+tRUD_2_WRZ --> WRZ
+WRZ --> tWRZ_2_JLK
+tWRZ_2_JLK --> JLK
+JLK --> tJLK_2_WRZ
+tJLK_2_WRZ --> WRZ
+WRZ --> tWRZ_2_BLE
+tWRZ_2_BLE --> BLE
+BLE --> tBLE_2_WRZ
+tBLE_2_WRZ --> WRZ
+WRZ --> tWRZ_2_GUA
+tWRZ_2_GUA --> GUA
+GUA --> tGUA_2_WRZ
+tGUA_2_WRZ --> WRZ
+WRZ --> tWRZ_2_PRJ
+tWRZ_2_PRJ --> PRJ
+PRJ --> tPRJ_2_WRZ
+tPRJ_2_WRZ --> WRZ
+ANI --> tANI_2_HCW
+tANI_2_HCW --> HCW
+HCW --> tHCW_2_ANI
+tHCW_2_ANI --> ANI
+ANI --> tANI_2_SIK
+tANI_2_SIK --> SIK
+SIK --> tSIK_2_ANI
+tSIK_2_ANI --> ANI
+ANI --> tANI_2_RED
+tANI_2_RED --> RED
+RED --> tRED_2_ANI
+tRED_2_ANI --> ANI
+ANI --> tANI_2_GUA
+tANI_2_GUA --> GUA
+GUA --> tGUA_2_ANI
+tGUA_2_ANI --> ANI
