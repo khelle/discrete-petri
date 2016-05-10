@@ -44,39 +44,69 @@
 \section{Foreword}  
 
 \paragraph{}
-For our project in "Modeling, simulation, and performance analysis of discrete event systems with Petri Nets", we have chosen to simulate a part of powergrid used in Silesian district in Poland. Our statistical analysis takes into account both physical properties of cables and real topology on which powergrid bases on. The reason for chosing this project is the fact we believe petri nets are perfect tools for simulation such scenario, and we would like to evalute if this statement will hold true throughout the project. This report will be divided in several parts and cover input data, simulation files, diagrams and received results.
+For our project in "Modeling, simulation, and performance analysis of discrete event systems with Petri Nets", we have chosen to simulate a part of powergrid used in Poland. Our statistical analysis takes into account both physical properties of cables and real topology on which powergrid bases on. The reason for chosing this project is the fact that we believe petri nets are perfect tools for simulation such scenario, and we would like to evalute if this statement will hold true throughout the project. This report will be divided in several parts and cover input data, simulation files, diagrams and received results.
 
 % -------------------------------------------------------------
 %
 \section{Introduction}   
-
 \paragraph{}
-Rising consumption of electrical energy and its strategic meaning in economy of highly developed countries has translated into creation of necessity to guarantee safety of its supply to customers. The fundamental limitations regarding the capacity of modern electrical networks are set because of physical properties of materials used in their construction. Each material has its own set of properties and cost of use, both of which have to be taken into consideration by electrical engineers in phase of designing new and maitaining existing powergrid connections. For the purpose of current document we had chosen a part of the power grid existing in Poland and simulated what would happen if links between parts of the grid were shutdown - where would the power go and how would it affect the state of the network. Specifically, we tried to simulate how much would cables extend if more power were transmited through them and checked whether there exists possibilities of accidents.
+Rising consumption of electrical energy and its strategic meaning in economy of highly developed countries has translated into creation of necessity to guarantee safety of its supply to customers. The fundamental limitations regarding the capacity of modern electrical networks are set because of physical properties of materials used in their construction. Each material has its own set of properties and cost of use, both of which have to be taken into consideration by electrical engineers in phase of designing new and maitaining existing powergrid connections. For the purpose of current document we had chosen a part of the power grid existing in Poland and simulated what would happen if links between parts of the grid were overloaded - where would the power go and how would it affect the state of the network. Specifically, we tried to simulate how much would cables extend if more power were transmited through them and checked whether there exists possibilities of accidents.
 
 \subsection{Problem definition}
-
 \paragraph{}
 The biggest problem connected to creation of new and maintaining existing powergrids is the fact that depending on the load in the given unit of time the physical reaction of powergrid infrastructure can be different. The voltage transported through the cables make huge impact on them changing their characteristics such as length, temperature and others. What's more they are also dependant on external factors - the time of the day, the season, air temperature etc. The plethora of scenarios that must be taken into consideration makes fixing powergrids hard and expensive.
 
 \subsection{Goals}                                                                          
 \paragraph{}
-The goal of this project is to check whether petri networks are well-fit tool for purpose of modeling and evaluating electrical networks. We will decide on this depending on the results we get from simulating existing powergrid. 
+The are few goals of this project. The first one is to check whether petri networks are well-fit tool for purpose of modeling and evaluating electrical networks. We will decide on this depending on the results we get from simulating existing powergrid. The second one is to validate existing powergrid topology, check whether it is optimal and efficient or has the used topology started to show its age.
 
 \subsection{Sources}
-
 \paragraph{}
+The sources used in this project are the topology of Polish powergrid with its physical properties, average power consumption data scaled up to appropriate values. The theory we used for the purpose of this document was taken from our our understanting of basics of physics and electrical engineering, science magazines and information we gained while searching internet for suitable articles on this matter.
 
 \subsection{Methods}
-
 \paragraph{}
 As a tool for modeling and simulation the existing powergrid we will use Petri networks. The places will represent customers while transitions will represent cables. The markers will be used as a mean of representing electrical movement. The tool we will use for this project is GPenSIM created by Reggie Davidrajuh [2]. The details of used method will be described further in its own section.
+
+\clearpage
 
 % -------------------------------------------------------------
 %
 \section{Theory}
-
 \paragraph{}
+In this section we will try to describe basic concepts that needs to be known by the reader to properly understand this document.\\
+
+\textbf{Petri networks} is one of several mathematical modeling languages for the description of distributed systems. A Petri net is a directed bipartite graph, in which the nodes represent transitions (i.e. events that may occur, represented by bars) and places (i.e. conditions, represented by circles). The directed arcs describe which places are pre- and/or postconditions marked  as arrows. [3]
+
+In mathematical sense petri networks can be described as a tuple:
+
+\begin{equation}
+N = (P, T, A, N, E, G, I )
+\end{equation}
+
+where:
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+\item P is a set of places,
+\item T is a set of transitions,
+\item A is a set of arcs,
+\item N is a node function. It maps A into (P x T)U(T x P),
+\item E is an arc expression function. It maps each arc into the expression e. The input and output types of the arc expressions must correspond to the type of the nodes the arc is connected to,
+\item G is a guard function. It maps each transition into guard expression g. The output of the guard expression should evaluate to Boolean value true or false,
+\item I is an initialization function. It maps each place p into an initialization expression i. The initialization expression must evaluate to multiset of tokens with a color corresponding to the color of the place C(p).\\
+\end{itemize}
+
+An extension of petri networks are \textbf{Coloured Petri nets}. They allow tokens to have a data value attached to them. This attached data value is called token color. Although the color can be of arbitrarily complex type, places usually contain tokens of one type. This type is called color set of the place. [4] Color sets can be compared to structures in prototype programming.
+
+\clearpage
+
 \textbf{Thermal expansion} is the tendency of matter to change in shape, area, and volume in response to a change in temperature, through heat transfer. The coefficient of thermal expansion describes how the size of an object changes with a change in temperature. Specifically, it measures the fractional change in size per degree change in temperature at a constant pressure. [1]
+
+\begin{equation}
+\alpha_V = \frac{1}{V}\,\frac{dV}{dT}
+\end{equation}
 
 % -------------------------------------------------------------
 %
@@ -119,6 +149,13 @@ Text Text Text
 
 \paragraph{}
 Text Text Text
+
+\clearpage
+
+%1:
+%2:
+%3: https://en.wikipedia.org/wiki/Petri_net}
+%4: https://en.wikipedia.org/wiki/Coloured_Petri_net
 
 % -------------------------------------------------------------
 %
