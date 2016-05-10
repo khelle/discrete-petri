@@ -26,7 +26,6 @@ global global_info ;
 switch 	trasition.name
 	case 'tANI_2_HCW'
 		s = 'trolololo'
-	end;
+end
 
-end;
 
