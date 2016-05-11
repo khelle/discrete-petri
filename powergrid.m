@@ -2,7 +2,7 @@
 clear all; clc;
 
 global global_info;
-global_info.EXTERNAL_TEMPERATURE = 30; % in Celsius
+global_info.EXTERNAL_TEMPERATURE = 40; % in Celsius
 global_info.BASE_TEMPERATURE = 20;
 pns = pnstruct('powergrid_pdf');
 
