@@ -1,8 +1,6 @@
 % Simulation file
 clear all; clc;
 
-%hacked
-
 global global_info;
 global_info.counter = 0; 
 %global_info.STOP_AT = 2; 
@@ -15,12 +13,9 @@ pns = pnstruct('powergrid_pdf');
 
 
 %ANI-PRA
-
 priorityANIPRA = {'tGEN_AT1',1,'tANI_2_KDN', 1, 'tKDN_2_ZAG', 1, 'tZAG_2_KLO', 1, 'tKLO_2_PAN', 1, 'tPAN_2_PRA', 1};
 
-%dyn.ip = {'tANI_2_KDN', 1, 'tKDN_2_ZAG', 1}
 dyn.ip = priorityANIPRA;
-
 global_info.MAX_LOOP = floor(length(priorityANIPRA)/2);
 
 
@@ -31,6 +26,6 @@ dyn.m0 = {'GENANI', 1};
 pni = initialdynamics(pns, dyn);
 
 sim = gpensim(pni);
-%prnfinalcolors(sim); 
 
+prnfinalcolors(sim); 
 plotp(sim, {'GENANI', 'ANI', 'KDN', 'ZAG', 'KLO', 'PAN', 'PRA'});
