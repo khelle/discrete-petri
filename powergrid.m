@@ -15,7 +15,9 @@ pns = pnstruct('powergrid_pdf');
 
 
 %ANI-PRA
-priorityANIPRA = {'tANI_2_KDN', 1, 'tKDN_2_ZAG', 1, 'tZAG_2_KLO', 1, 'tKLO_2_PAN', 1, 'tPAN_2_PRA',1};
+
+priorityANIPRA = {'tGEN_AT1',1,'tANI_2_KDN', 1, 'tKDN_2_ZAG', 1, 'tZAG_2_KLO', 1, 'tKLO_2_PAN', 1, 'tPAN_2_PRA', 1};
+
 %dyn.ip = {'tANI_2_KDN', 1, 'tKDN_2_ZAG', 1}
 dyn.ip = priorityANIPRA;
 
@@ -24,6 +26,7 @@ global_info.MAX_LOOP = floor(length(priorityANIPRA)/2);
 
 %%%% initial dynamics %%%%
 dyn.m0 = {'GENANI', 1}; 
+
 %dyn.ft = {'allothers',1};
 pni = initialdynamics(pns, dyn);
 

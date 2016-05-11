@@ -117,8 +117,8 @@ cableResistanceIn20Cels = [0.2214, 0.1482, 0.1172]; % ohm/km
 cableMassPerKm = [518, 769, 952];
 baseTemperature = 20; % celsius
 % in 10^(-6)/C
-cableCoilExpansionFactor  = 11.5;
-thermalExpansionFactors = [19.23, 19.18, 19.5];
+cableCoilExpansionFactor  = 11.5 * 10^-6;
+thermalExpansionFactors = [19.23, 19.18, 19.5] * 10^-6 % 10^-6 / C;
 
 
 CableName2CableLength = containers.Map(cableNames,cableLengths);
