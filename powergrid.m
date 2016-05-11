@@ -20,7 +20,7 @@ dyn.ip = priorityANIPRA;
 
 %%%% initial dynamics %%%%
 dyn.m0 = {'GENANI', 100}; 
-dyn.ft = {'allothers',1};
+%dyn.ft = {'allothers',1};
 pni = initialdynamics(pns, dyn);
 
 sim = gpensim(pni);
