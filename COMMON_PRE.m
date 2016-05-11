@@ -19,7 +19,9 @@ if ~generators
 	cableThermalExpansionFactor = CableType2ThermalExpansionFactors(cableTypeName);
 	cableResistanceIn20Cels  = CableType2CableResistanceIn20Cels(cableTypeName);
 	cableMassPerKm = CableType2CableMassPerKm(cableTypeName);
-	
+	electricCurrent  = CableName2ElectricalCurrent(cableName);
+    cablePowerUsage = CableName2PowerUsage(cableName);
+    
 	%calculate how cable lengthens
 	cableMass = calculateCableMass(185, cableMassPerKm);
 	cableResistanceAtTemp = calculateTemperatureResistance(aluminiumTemperatureResistanceCoefficient, cableResistanceIn20Cels, global_info.EXTERNAL_TEMPERATURE - global_info.BASE_TEMPERATURE);
