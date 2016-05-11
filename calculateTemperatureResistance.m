@@ -2,4 +2,4 @@ function [newResistanceValue] = calculateTemperatureResistance(temperatureResist
 
 newResistanceValue = baseResistance * (1 + temperatureResistanceCoefficient * temperatureChange);
 
-end;
+end

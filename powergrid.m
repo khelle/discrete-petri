@@ -5,13 +5,13 @@ clear all; clc;
 
 global global_info;
 global_info.counter = 0; 
-global_info.STOP_AT = 150; 
+global_info.STOP_AT = 2; 
 global_info.EXTERNAL_TEMPERATURE = 30; % in Celsius
 global_info.BASE_TEMPERATURE = 20;
 pns = pnstruct('powergrid_pdf');
 
 %%%% initial dynamics %%%%
-dyn.m0 = {'ANI', 1}; 
+dyn.m0 = {'GENANI', 100}; 
 dyn.ft = {'allothers',1};
 pni = initialdynamics(pns, dyn);
 

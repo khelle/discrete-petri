@@ -2,4 +2,4 @@ function [newLength] =  calculateCableLength(oldLength, thermalExpansionFactor, 
 
 newLength = oldLength * (1 * thermalExpansionFactor * temperatureDifference);
 
-end;
+end

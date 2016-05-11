@@ -5,4 +5,4 @@ function [cableMass] = calculateCableMass(cableLength, cableDensity)
 cableLengthInKm = cableLength / 1000;
 cableMass = cableDensity * cableLengthInKm; 
 
-end;
+end
