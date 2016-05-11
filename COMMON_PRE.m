@@ -2,7 +2,7 @@ function [fire, transition] = COMMON_PRE(transition)
 
 % load data
 load 'data.mat';
-global global_info ;
+global global_info;
 
 
 gen1 = strcmp(transition.name, 'tGEN_3');
@@ -34,28 +34,30 @@ if ~generators
     %graniczne wartoœci
 end;
 
+
+transition
 switch 	transition.name
     case 'tGEN_AT1'
-                                %FROM    , POWER, ...
+                                %FROM
         transition.new_color = {'500'};
-        transition.override = 1
-	case 'tANI_2_KDN'
-
-        tokID = tokenAny(transition.name(2:4), 1); % first, select the only token
-        colors = get_color(transition.name(2:4),tokID) % % second, get the colors of the token
-
-        power = str2double(colors{1}) % convert the color-2 into number
-        power = power -50;
-
-        transition.new_color = {num2str(power)}; % put the sum as the new color 
-        transition.override = 1; % only sum as color - NO inheritance
-	case 'tKDN_2_ZAG'
-        tokID = tokenAny(transition.name(2:4), 1);
-        colors = get_color(transition.name(2:4),tokID)
-
+        transition.override = 1;
+        
+        fire = 1;
 
     otherwise
-        transition
+        tokID = tokenAny(transition.name(2:4), 1);
+        colors = get_color(transition.name(2:4),tokID);
+
+        power = str2double(colors{1});
+        power = power -150
+
+        if(power <= 0)
+            power = 0;
+            global_info.STOP_SIMULATION = 1;
+        end
+        
+        transition.new_color = {num2str(power)}; % put the sum as the new color 
+        transition.override = 1; % only sum as color - NO inheritance
 end
 
 fire = 1;
