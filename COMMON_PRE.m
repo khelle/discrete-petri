@@ -34,7 +34,7 @@ end;
 
 switch 	transition.name
     case 'tGEN_AT1'
-        transition.new_color = {'MOC W CHUJ', '500', 'ANI-PRA'}
+        transition.new_color = {'MOC W CHUJ', '500', 'ANI-PRA'};
         transition.override = 1
 	case 'tANI_2_HCW'
 		s = 'trolololo'

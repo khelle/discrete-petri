@@ -1,0 +1,4 @@
+
+dyn.ft - firing times for transitions
+
+dyn.m0 - znakowanie pocz¹tkowe
