@@ -3,6 +3,13 @@
 function [png] = powergrid_pdf()
 
 
+priorityANIPRA = {...
+	'tANI_2_KDN', 1, 
+	'tKDN_2_ZAG', 1,
+	'tZAG_2_KLO', 1,
+	'tKLO_2_PAN', 1,
+	'tPAN_2_PRA', 1
+}
 
 png.PN_name = 'Powergrid Simulation';
 png.set_of_Ps = {...
