@@ -9,6 +9,10 @@
 \usepackage{geometry}
 \usepackage{titlesec}
 \usepackage{multirow}
+\usepackage[autostyle]{csquotes}
+\usepackage[backend=biber,style=numeric]{biblatex}
+
+\addbibresource{discrete-petri.bib}
 
 \geometry{
 	a4paper,
@@ -36,6 +40,8 @@
 
 \begin{document}
 
+\nocite{*}
+
 \maketitle
 
 \clearpage
@@ -49,6 +55,7 @@
 \section{Foreword}
 \label{cha:foreword}
 \paragraph{}
+
 For our project in "Modeling, simulation, and performance analysis of discrete event systems with Petri-Nets", we have chosen to simulate a part of power grid used in Poland. Our statistical analysis takes into account both physical properties of cables and real topology on which power grid bases on. The reason for choosing this project is the fact that we believe Petri-nets are perfect tools for simulation such scenario, and we would like to evaluate if this statement will hold true throughout the project. This report will be divided in several parts and cover input data, simulation files, diagrams and received results.
 
 % -------------------------------------------------------------
@@ -56,16 +63,19 @@ For our project in "Modeling, simulation, and performance analysis of discrete e
 \section{Introduction}  
 \label{cha:introduction}
 \paragraph{}
+
 Rising consumption of electrical energy and its strategic meaning in economy of highly developed countries has translated into creation of necessity to guarantee safety of its supply to customers. The fundamental limitations regarding the capacity of modern electrical networks are set because of physical properties of materials used in their construction. Each material has its own set of properties and cost of use, both of which have to be taken into consideration by electrical engineers in phase of designing new and maintaining existing power grid connections. For the purpose of current document we had chosen a part of the power grid existing in Poland and simulated what would happen if links between parts of the grid were overloaded - where would the power go and how would it affect the state of the network. Specifically, we tried to simulate how much would cables extend if more power were transmitted through them and checked whether there exists possibilities of accidents.
 
 \subsection{Problem definition}
 \label{sec:problemDefinition}
 \paragraph{}
+
 The biggest problem connected to creation of new and maintaining existing power grids is the fact that depending on the load in the given unit of time the physical reaction of power grid infrastructure can be different. The voltage transported through the cables make huge impact on them changing their characteristics such as length, temperature and others. What's more they are also dependent on external factors - the time of the day, the season, air temperature etc. The plethora of scenarios that must be taken into consideration makes fixing power grids hard and expensive.
 
 \subsection{Goals} 
 \label{sec:goals}
 \paragraph{}
+
 The are few goals of this project. The first one is to check whether Petri-nets are well-fit tool for purpose of modeling and evaluating electrical networks. We will decide on this depending on the results we get from simulating existing power grid. The second one is to validate existing power grid topology, check whether it is optimal and efficient or has the used topology started to show its age. 
 
 \subsection{Sources}
@@ -76,7 +86,8 @@ The sources used in this project are the topology of Polish power grid with its 
 \subsection{Methods}
 \label{sec:methods}
 \paragraph{}
-As a tool for modeling and simulation the existing power grid we will use Petri-nets. The places will represent customers while transitions will represent cables. The markers will be used as a mean of representing electrical movement. The tool we will use for this project is GPenSIM created by Reggie Davidrajuh [2]. The details of used method will be described further in its own section.
+
+As a tool for modeling and simulation the existing power grid we will use Petri-nets. The places will represent customers while transitions will represent cables. The markers will be used as a mean of representing electrical movement. The tool we will use for this project is GPenSIM created by Reggie Davidrajuh \cite{Art2}. The details of used method will be described further in its own section.
 
 \clearpage
 
@@ -92,7 +103,7 @@ In this section we will try to describe basic concepts that needs to be known by
 \label{sec:petriNetworks}
 \paragraph{}
 
-\textbf{Petri networks} (Petri-nets) is one of several mathematical modeling languages for the description of distributed systems. A Petri net is a directed bipartite graph, in which the nodes represent transitions (i.e. events that may occur, represented by bars) and places (i.e. conditions, represented by circles). The directed arcs describe which places are pre- and/or post- conditions marked  as arrows. [3]
+\textbf{Petri networks} (Petri-nets) is one of several mathematical modeling languages for the description of distributed systems. A Petri net is a directed bipartite graph, in which the nodes represent transitions (i.e. events that may occur, represented by bars) and places (i.e. conditions, represented by circles). The directed arcs describe which places are pre- and/or post- conditions marked  as arrows. \cite{Art3}
 
 In mathematical sense Petri-net can be described as a tuple:
 
@@ -116,7 +127,7 @@ where:
 
 \clearpage
 
-An extension of Petri-nets are \textbf{Coloured Petri-nets}. They allow tokens to have a data value attached to them. This attached data value is called token color. Although the color can be of arbitrarily complex type, places usually contain tokens of one type. This type is called color set of the place. [4] Color sets can be compared to structures in prototype programming.\\
+An extension of Petri-nets are \textbf{Coloured Petri-nets}. They allow tokens to have a data value attached to them. This attached data value is called token color. Although the color can be of arbitrarily complex type, places usually contain tokens of one type. This type is called color set of the place. \cite{Art4} Color sets can be compared to structures in prototype programming.\\
 
 The second extension of Petri-nets used are \textbf{Prioritized Petri-nets}. They allow to solve conflicts in queuing firing the transitions thanks to using priorities. In case of conflict between two or more transitions the one with higher priority wins.
 
@@ -126,11 +137,11 @@ The second extension of Petri-nets used are \textbf{Prioritized Petri-nets}. The
 
 For the purpose of this project we had to use basic information from physics. The main concepts we had to use are fundamentals of thermodynamics.\\
 
-\textbf{Thermodynamics} is a branch of physics concerned with heat and temperature and their relation to energy and work. It defines macroscopic variables, such as internal energy, entropy, and pressure, that partly describe a body of matter or radiation. [5]\\
+\textbf{Thermodynamics} is a branch of physics concerned with heat and temperature and their relation to energy and work. It defines macroscopic variables, such as internal energy, entropy, and pressure, that partly describe a body of matter or radiation. \cite{Art5}\\
 
-One of sub occurrences of this subject of physics is \textbf{Thermal expansion}. It defines the tendency of matter to change in shape, area, and volume in response to a change in temperature, through heat transfer. The coefficient of thermal expansion describes how the size of an object changes with a change in temperature. Specifically, it measures the fractional change in size per degree change in temperature at a constant pressure. [1]\\
+One of sub occurrences of this subject of physics is \textbf{Thermal expansion}. It defines the tendency of matter to change in shape, area, and volume in response to a change in temperature, through heat transfer. The coefficient of thermal expansion describes how the size of an object changes with a change in temperature. Specifically, it measures the fractional change in size per degree change in temperature at a constant pressure. \cite{Art1}\\
 
-To measure the value of extension or contraction of the length for given material, the following formula can be used: [6]
+To measure the value of extension or contraction of the length for given material, the following formula can be used: \cite{Art6}
 
 \clearpage
 
@@ -161,7 +172,7 @@ Where the unit is:
 [\alpha] = \frac {1}{K}
 \end{equation}
 
-The relative change of temperature can be found using equation: [7]
+The relative change of temperature can be found using equation: \cite{Art7}
 
 \begin{equation}
 R_T=R_0(1+\alpha \cdot \Delta T)
@@ -190,7 +201,7 @@ The thermal resistance coefficient depends on the material for which we are maki
 
 The second concept that needs to be understand to properly simulate powergrid is the \textbf{energy loss}.\\ 
 
-Transmitting electricity at high voltage reduces the fraction of energy lost to resistance, which varies depending on the specific conductors, the current flowing, and the length of the transmission line. Factors that affect the resistance, and thus loss, of conductors used in transmission and distribution lines include temperature, spiraling, and the skin effect. The resistance of a conductor increases with its temperature. Temperature changes in electric power lines can have a significant effect on power losses in the line. Spiraling, which refers to the increase in conductor resistance due to the way stranded conductors spiral about the center, also contributes to increases in conductor resistance. The skin effect causes the effective resistance of a conductor to increase at higher alternating current frequencies. [8]\\
+Transmitting electricity at high voltage reduces the fraction of energy lost to resistance, which varies depending on the specific conductors, the current flowing, and the length of the transmission line. Factors that affect the resistance, and thus loss, of conductors used in transmission and distribution lines include temperature, spiraling, and the skin effect. The resistance of a conductor increases with its temperature. Temperature changes in electric power lines can have a significant effect on power losses in the line. Spiraling, which refers to the increase in conductor resistance due to the way stranded conductors spiral about the center, also contributes to increases in conductor resistance. The skin effect causes the effective resistance of a conductor to increase at higher alternating current frequencies. \cite{Art8}\\
 
 The power loss can be measured with:
 
@@ -341,19 +352,39 @@ The graphic representation of described model is shown in figure \ref{fig:img4}.
 % -------------------------------------------------------------
 %
 \section{Matlab approach}
-
-% W pliku PDF zawarlismy definicje sieci, miejsc, przejsc i polaczen miedzy nimi. W pliku data.math umiescilismy dane liczbowe niezbedne do przeprowadzanie symulacje. Zdecydowalismy sie na wydzielenie danych liczbowych do osobnego pliku aby poprawic czytelnosc kodu i zwiekszyc reuzywalnosc. Do powiazania danych ze soba uzylismy hasz-map ze wzgledu na latwosc wykorzystania i wzgledna efektywnosc. Dzialania wszystkich przejsc zostaly zamodelowane w pliku COMMON_PRE ze wzgledu na faktu, ze wszystkie przejscia dzialaja na tej samej zasadzie, w szczegolnosci w pliku COMMON_PRE nastepuja obliczenia zwiazane z wydluzaniem sie kabla pod wplywem badanych przez nas czynnikow oraz uwzgladnienai spadkow mocy pobieranej przez poszczeglonych odbiorcow na trasie symulacji. W [glownym pliku] zawarlismy dane niezbedne do przeorwadzenia wszystkich symulacji.
-
+\label{cha:matlabApproach}
 \paragraph{}
-Text Text Text
+
+% W pliku PDF zawarlismy definicje sieci, miejsc, przejsc i polaczen miedzy nimi. W pliku data.mat umiescilismy dane liczbowe niezbedne do przeprowadzanie symulacje. Zdecydowalismy sie na wydzielenie danych liczbowych do osobnego pliku aby poprawic czytelnosc kodu i zwiekszyc reuzywalnosc. Do powiazania danych ze soba uzylismy hasz-map ze wzgledu na latwosc wykorzystania i wzgledna efektywnosc. Dzialania wszystkich przejsc zostaly zamodelowane w pliku COMMON_PRE ze wzgledu na faktu, ze wszystkie przejscia dzialaja na tej samej zasadzie, w szczegolnosci w pliku COMMON_PRE nastepuja obliczenia zwiazane z wydluzaniem sie kabla pod wplywem badanych przez nas czynnikow oraz uwzgladnienai spadkow mocy pobieranej przez poszczeglonych odbiorcow na trasie symulacji. W [glownym pliku] zawarlismy dane niezbedne do przeorwadzenia wszystkich symulacji.
+
+Our project consists of file containing the definition of Petri Net - places, transitions and arcs. In file data.mat we have placed numerical data which is necessary to perform simulation. We have decided to put them in single file for visibility and reusability - one can easily input new data to perform other variants of simulations. All of the transitions behaviours have been modeled in common preprocessor file because most of transitions share common behaviour. Additionally we added several functions for computing lenghtening, heating, power consumption etc.
 
 \subsection{Main Simulation File}
+\label{sec:mainSimulationFile}
+\paragraph{}
+
+Main simulation file contains loops which we used to perform a number of different simulations depending on two factors - parts of Net (routes of interest along which power is provided from generators) and external temperature (huge inpact on cable lengthening). It contains both initial set of markers distributed along generators to set which of them is active and set of priorities indicating which segment of network we are simulating.
+
 \subsection{Loading real data}
+\label{sec:loadingRealData}
+\paragraph{}
+
+To bind the data together we have used hash-maps because of their relative efficiency and ease of use. They contain values for power usage, electrical current, type of used cable, their weight. All values are bound to transition names, which afterwards are used in common preprocessor, without need to model each line separately.
+
 \subsection{Token generator and coloring}
+\label{sec:tokenGeneratorAndColoring}
+\paragraph{}
+
+Instead of use several number of tokens to simulate unit of power from generators we decided to use only one colored marker. Transition which represents one of the generators puts number of power on marker it 'generates' and later this color is being reduced with each transition, or we can say it is consumed by clients.
 
 % -------------------------------------------------------------
 %                                      
-\section{Testing, analysis and Results}   
+\section{Testing, analysis and results}   
+\label{cha:testingAnalysisAndResults}
+\paragraph{}
+
+We have performed several simulations which have taken into consideration external temperatures ranging from -20 C to +40 C. We have also looked seperately at different parts of power grid. 
+
 
 \paragraph{}
 Text Text Text
@@ -361,13 +392,35 @@ Text Text Text
 % -------------------------------------------------------------
 %
 \section{Challenges and solutions}    
-
+\label{cha:ChallengesAndSolutions}
 \paragraph{}
-Text Text Text
+
+The work put to this project came together with few difficulties we had to deal with.\\
+
+Firstly, the problem itself was overly variadic and very complicated. To cope with this we had to make proper assumptions and simplifactions as described in chapter \ref{sec:assumptions}. The data we had used were taken mainly from articles we gathered and were upscaled to proper size using statistical methods. Some of the formulas used were made easier too -- for example we did omit time variable -- as it was not fit to be modeled using Petri-nets. The problem here was that the Petri-nets uses discrete variables for dealing with time tasks, while in electrical engineering the time is need to be represent as continous function.\\
+
+Secondly, the used tool needed to store some data about the overall state of simulation in global storage. It made programming it harder and we had suffered some errors because of it.\\
+
+Thirdly, because of naming convention and number of places and transitions it was hard to debug the whole project.\\
+
+Last, but not least, we had to find a proper way to represent electrical power and its routing system throughout the power grid. For the first one we have chosen colors to save voltage value carried by each marker and for the second one we have used priorities. This method has been already described more in-depth in chapter \ref{cha:methods}.\\
+
+% duzo czynnikow
+% uproszczenia
+% wzory
+% petri-nets nie dokonaca dobrze dobrze nadaja sie do odzorowania sieci elektrycznyh
+% problem z modelowaniem obustronnej komunikacji
+% duzo globalnych zmiennych - zeby przechowywac dane miedzy symulacjam
+% nazewnictwo
+% 
 
 % -------------------------------------------------------------
 %
 \section{Conclusion}
+\label{cha:conclusion}
+\paragraph{}
+
+For the purpose of our project in "Modeling, simulation, and performance analysis of discrete event systems with Petri-Nets", we had simulated a part of power grid used in Poland. Our statistical analysis took into account both physical properties of cables and real topology on which power grid bases on. Using GPenSim tool \cite{Art2} we were able to model the topology of the grid into Petri-net model and then simulate its behaviour. We put focus mainly on how the cables extend and how far their temperature rises and were able to measure values of both of them. Unfortunately, the Petri-nets turned out not to be well-fit tools for this kind of task as we had initially assumed. During the project we faced many problems, but were able to solve them.\\To sum up, we believe our project was a success, we have measured everything we initially wanted despite hardships and proved things like that can be done with Petri-Nets, event if they are not perfectly convenient solution to this kind of tasks.
 
 %W razie potrzeby projekt można w łatwy sposób rozszerzyć o uwzględnianie zmian wyżej wymienionych współczynników ze względu na elastyczność GPENSim w przeprowadzaniu obliczeń w ramach przejśc w sieci. Jednakże dane o innych wartościach parametrów nie są dostępne publicznie na stronie producentów przewodów i należałoby skontantakować się z nimi w celu uzyskaniach ich.   
 
@@ -375,20 +428,6 @@ Text Text Text
 % Ze względu na wzrost średnich temperatur w Polsce (lub w ogólnyości na świecie) oraz stały wzrost zużycia energii elektrycznej w państawach rozwiniętych należy zwracać coraz baczniejszą uwagę na wpływ temperatur i przesyłanej mocy na stan sieci. Brak odpowiednich wyliczeń oraz prognoz może prowadzić do sytuacji w których kable zwisające na zbyt niskiej wysokości mogą prowadzić do wypadków z udziałem maszyn rolniczych lub innych pojazdów. Jest to też aspekt który każdy użytkownik może obserwować gołym okiem - np. widzimy wysoko zwisające kable w ciągu chłodnych miesięcy zimowych lub nisko podczas letnich upałów.
 
 % Ze względu na szeroki wachlarz / szeroki zakres możliwości sieci Petriego jak i narzędzia GPENSIM model można wykorzystać zarówno do rozszerzenia dokładności symulacji wydłużania kabli jak i szeregu innych symulacji i analiz (np. strat mocy).
-
-\paragraph{}
-Text Text Text
-
-\clearpage
-
-%1: https://en.wikipedia.org/wiki/Thermal_expansion
-%2:
-%3: https://en.wikipedia.org/wiki/Petri_net}
-%4: https://en.wikipedia.org/wiki/Coloured_Petri_net
-%5: https://en.wikipedia.org/wiki/Thermodynamics
-%6: https://pl.wikipedia.org/wiki/Rozszerzalno%C5%9B%C4%87_cieplna
-%7: https://pl.wikipedia.org/wiki/Temperaturowy_wsp%C3%B3%C5%82czynnik_rezystancji
-%8: https://en.wikipedia.org/wiki/Electric_power_transmission
 
 % -------------------------------------------------------------
 %
@@ -400,6 +439,19 @@ Text Text Text
 
 % -------------------------------------------------------------
 %
-%\bibliography{}
+\clearpage
+\printbibliography
+
+%\bibliographystyle{plain}
+%\bibliography{discrete-petri.bib}
+
+%1: https://en.wikipedia.org/wiki/Thermal_expansion
+%2:
+%3: https://en.wikipedia.org/wiki/Petri_net}
+%4: https://en.wikipedia.org/wiki/Coloured_Petri_net
+%5: https://en.wikipedia.org/wiki/Thermodynamics
+%6: https://pl.wikipedia.org/wiki/Rozszerzalno%C5%9B%C4%87_cieplna
+%7: https://pl.wikipedia.org/wiki/Temperaturowy_wsp%C3%B3%C5%82czynnik_rezystancji
+%8: https://en.wikipedia.org/wiki/Electric_power_transmission
 
 \end{document}
