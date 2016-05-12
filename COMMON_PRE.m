@@ -4,6 +4,7 @@ function [fire, transition] = COMMON_PRE(transition)
 load 'newdata.mat';
 global global_info;
 
+placeNumber = 1;
 
 gen1 = strcmp(transition.name, 'tGEN_3');
 gen2 = strcmp(transition.name, 'tGEN_4');
@@ -34,7 +35,7 @@ if ~generators
 	cableResistanceAtTemp = calculateTemperatureResistance(aluminiumTemperatureResistanceCoefficient, cableResistanceIn20Cels, temperatureDiff);
 	heatChange = Iac * Iac * cableResistanceAtTemp;
 	temperatureChange = heatChange / cableMass * aluminiumSpecificHeat;
-    temperatureChange = temperatureChange * 0.2; % we assume that 80% of heat is radiated from cable 
+    temperatureChange = temperatureChange * 0.1; % we assume that 80% of heat is radiated from cable 
 	newCableLength = calculateCableLength(segmentLength, cableThermalExpansionFactor, temperatureChange);
     cableDiff = abs(segmentLength-newCableLength);
     sumCableLengthen = cableSegments * newCableLength;
@@ -51,8 +52,8 @@ end;
 
 
 powerAT1 = 10^8;
-powerGEN3 = 10^8;
-powerGEN4 = 10^8;
+powerGEN3 = 10^12;
+powerGEN4 = 10^9;
 
 %transition
 %Add/Change color=power and display lenghtening with power usage
@@ -61,13 +62,25 @@ switch 	transition.name
         transition.new_color = {num2str(powerAT1)};
         transition.override = 1;
         
+        disp([' ']);
+        disp([transition.name]);
+        disp(['generated: ', num2str(powerAT1/10^6), ' [MWatts],']);
+        
     case 'tGEN_3'
         transition.new_color = {num2str(powerGEN3)};
         transition.override = 1;
         
+        disp([' ']);
+        disp([transition.name]);
+        disp(['generated: ', num2str(powerAT1/10^6), ' [MWatts],']);
+        
     case 'tGEN_4'
         transition.new_color = {num2str(powerGEN4)};
         transition.override = 1;
+                
+        disp([' ']);
+        disp([transition.name]);
+        disp(['generated: ', num2str(powerAT1/10^6), ' [MWatts],']);
         
     otherwise
         tokID = tokenAny(transition.name(2:4), 1);
@@ -80,25 +93,40 @@ switch 	transition.name
         disp([' ']);
         disp([transition.name]);
         disp(['cable length difference: ', num2str(cableDiff), ' [meters],']);
-        disp(['power usage: ', num2str(cablePowerUsage),' [Watts]']);
+        disp(['power usage: ', num2str(cablePowerUsage/1000),' [KiloWatts]']);
         disp(['cable temperature change: ', num2str(temperatureChange),' [Celsius]']);
         
         %sag is calculated according to temperature range
         if (temperatureChange >= 80)
             disp(['sag: ', num2str(sag), ' [meters]']);
+             global_info.Sag = [global_info.Sag; sag];
         else
             disp(['sag: ', num2str(sag2), ' [meters]']);
+            global_info.Sag = [global_info.Sag; sag2];
         end
 
-        
+        %global_info.Name = [global_info.Name, {];
+        global_info.TransitionName = [global_info.TransitionName; {transition.name}];
+        global_info.CableDiff = [global_info.CableDiff; cableDiff];
+        global_info.CablePowerUsage = [global_info.CablePowerUsage; cablePowerUsage];
+        global_info.TemperatureChange = [global_info.TemperatureChange; temperatureChange];
+      
+      
+        %type(global_info.SIM_NAME)
         if(power <= 0)
             power = 0;
+            
+            
             global_info.STOP_SIMULATION = 1;
+            
         end
         
         transition.new_color = {num2str(power)};
         transition.override = 1;
+        
+       
 end
 
+placeNumber = placeNumber + 1;
 
 fire = 1;

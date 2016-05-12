@@ -41,7 +41,8 @@ cableLengths = ...
    8023 8023;
    20056 20056;
    2952 2952;
-   19576 19576];
+   19576 19576;
+   13773 13773];
 
 cableMassPerKm = [518 769 952] * 10^-3;
 
@@ -79,6 +80,7 @@ cableNames{30,1} = 'tOLE_2_SOW';
 cableNames{31,1} = 'tSOW_2_DBR';
 cableNames{32,1} = 'tZAG_2_KLO';
 cableNames{33,1} = 'tPOH_2_KOT';
+cableNames{34,1} = 'tDBR_2_LBN';
 cableNames{1,2} = 'tHER_2_WRZ';
 cableNames{2,2} = 'tLBN_2_HER';
 cableNames{3,2} = 'tBLE_2_WRZ';
@@ -112,8 +114,9 @@ cableNames{30,2} = 'tSOW_2_OLE';
 cableNames{31,2} = 'tDBR_2_SOW';
 cableNames{32,2} = 'tKLO_2_ZAG';
 cableNames{33,2} = 'tKOT_2_POH';
+cableNames{34,2} = 'tLBN_2_DBR';
 
-cableResistanceIn20Cels = [0.2214 0.1482 0.1172] * 10^-3;;
+cableResistanceIn20Cels = [0.2214 0.1482 0.1172] * 10^-3;
 
 cableTypeNames = cell(1, 3);
 cableTypeNames{1} = 'AFL6 120';
@@ -187,10 +190,12 @@ cableTypes{30,2} = 'AFL6 240';
 cableTypes{31,2} = 'AFL6 240';
 cableTypes{32,2} = 'AFL6 185';
 cableTypes{33,2} = 'AFL6 240';
+cableTypes{34,2} = 'AFL6 120';
+
 
 currentI = ...
-  [0.138 0.138;
-   0.115 0.115;
+  [0.0138 0.0138;
+   0.0115 0.0115;
    0.019 0.019;
    0.006 0.006;
    0.035 0.035;
@@ -215,13 +220,15 @@ currentI = ...
    0.016 0.016;
    0.084 0.084;
    0.095 0.095;
-   0.126 0.126;
-   0.102 0.102;
+   0.0126 0.0126;
+   0.0102 0.0102;
    0.006 0.006;
    0.006 0.006;
    0.007 0.007;
-   0.102 0.102;
-   0.033 0.033] * 10^3;
+   0.0102 0.0102;
+   0.033 0.033;
+   0.0115 0.0115
+   ] * 10^3;
 
 
 
@@ -258,7 +265,8 @@ powerUsages = ...
    1.117 1.117;
    1.277 1.277;
    18.118 18.118;
-   0.469 0.469];
+   0.469 0.469;
+   21.384, 21.384   ];
    
  powerUsages = abs(powerUsages) * 10^6;  
 
