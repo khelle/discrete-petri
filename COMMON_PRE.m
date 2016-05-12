@@ -10,32 +10,43 @@ gen2 = strcmp(transition.name, 'tGEN_4');
 gen3 = strcmp(transition.name, 'tGEN_AT1');
 
 
-globalCable = 0;
 generators = gen1 || gen2 || gen3;
 if ~generators
 % search for data of particular cable in hashmaps
+    
+
+    segmentLength = 185;
 	cableName = transition.name;
 	cableLength = CableName2CableLength(cableName);
-    cableSegments = floor(cableLength/185); %one segment in line is typically 185 meters long
+    cableSegments = floor(cableLength/segmentLength); %one segment in line is typically 185 meters long
 	cableTypeName = CableName2CableType(cableName);
 	cableThermalExpansionFactor = CableType2ThermalExpansionFactors(cableTypeName);
 	cableResistanceIn20Cels  = CableType2CableResistanceIn20Cels(cableTypeName);
-	cableMassPerKm = CableType2CableMassPerKm(cableTypeName);
+	cableMassPerKm = CableType2CableMassPerKm(cableTypeName); % meters;
 	electricCurrent  = CableName2ElectricalCurrent(cableName);
-    cablePowerUsage = CableName2PowerUsage(cableName)
+    cablePowerUsage = CableName2PowerUsage(cableName);
+    
+    
+    Iac = electricCurrent / sqrt(1.0123 + 2.319 * 10^-5 * electricCurrent);
     
 	%calculate how cable lengthens
-	cableMass = calculateCableMass(185, cableMassPerKm);
-	cableResistanceAtTemp = calculateTemperatureResistance(aluminiumTemperatureResistanceCoefficient, cableResistanceIn20Cels, global_info.EXTERNAL_TEMPERATURE - global_info.BASE_TEMPERATURE);
-	heatChange = 3 * electricCurrent * electricCurrent* cableResistanceAtTemp;
+    temperatureDiff =  abs(global_info.EXTERNAL_TEMPERATURE - global_info.BASE_TEMPERATURE);
+	cableMass = calculateCableMass(segmentLength, cableMassPerKm);
+	cableResistanceAtTemp = calculateTemperatureResistance(aluminiumTemperatureResistanceCoefficient, cableResistanceIn20Cels, temperatureDiff);
+	heatChange = Iac * Iac * cableResistanceAtTemp;
 	temperatureChange = heatChange / cableMass * aluminiumSpecificHeat;
-	newCableLength = calculateCableLength(185, cableThermalExpansionFactor, temperatureChange)
-    cableDiff = abs(185-newCableLength)
+    temperatureChange = temperatureChange * 0.2; % we assume that 80% of heat is radiated from cable 
+	newCableLength = calculateCableLength(segmentLength, cableThermalExpansionFactor, temperatureChange);
+    cableDiff = abs(segmentLength-newCableLength);
     sumCableLengthen = cableSegments * newCableLength;
     globalCable = newCableLength;
     
-    %todo: obliczyæ o ile obni¿y siê kabel w najni¿szym miejcu i jakie s¹
-    %graniczne wartoœci
+    cableTension = calculateTensionFromTemperature(temperatureChange);
+    sag = (segmentLength * segmentLength * cableMassPerKm) / (8 * cableTension);
+    sag = sag * 10^4 * 3 % unit adjustment
+    
+    sag2 = 0.03 * temperatureChange
+    
 end;
 
 

@@ -43,7 +43,7 @@ cableLengths = ...
    2952 2952;
    19576 19576];
 
-cableMassPerKm = [518 769 952] * 10^3;;
+cableMassPerKm = [518 769 952] * 10^-3;
 
 cableNames = cell(33, 2);
 cableNames{1,1} = 'tWRZ_2_HER';

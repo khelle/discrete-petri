@@ -188,7 +188,7 @@ cableTypeNames = {'AFL6 120','AFL6 185','AFL6 240'};
 aluminiumTemperatureResistanceCoefficient = 4,4 /1000; % K ^ -1 
 aluminiumSpecificHeat = 900; % J/(kg·K)
 cableResistanceIn20Cels = [0.2214, 0.1482, 0.1172] * 10^-3; % ohm/m
-cableMassPerKm = [518, 769, 952] * 10^3;
+cableMassPerKm = [518, 769, 952] * 10^-3;
 baseTemperature = 20; % celsius
 % in 10^(-6)/C
 cableCoilExpansionFactor  = 11.5 * 10^-6;

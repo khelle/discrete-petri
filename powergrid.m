@@ -29,4 +29,4 @@ pni = initialdynamics(pns, dyn);
 sim = gpensim(pni);
 
 prnfinalcolors(sim); 
-plotp(sim, {'GENANI', 'ANI', 'KDN', 'ZAG', 'KLO', 'PAN', 'PRA'});
+%plotp(sim, {'GENANI', 'ANI', 'KDN', 'ZAG', 'KLO', 'PAN', 'PRA'});
