@@ -1,9 +1,10 @@
 % Simulation file
 clear all; clc;
+close all;
 
 global global_info;
 
-externalTemperatures = [-20 0 20 40];
+externalTemperatures = [10 20 30 40];
 global_info.EXTERNAL_TEMPERATURE = 40; % in Celsius
 global_info.BASE_TEMPERATURE = 20;
 global_info.SIM_NAME  = 'newsim';
@@ -52,6 +53,11 @@ priorities = {priorityANIPRA,priorityHCWRED, priorityGUASIK, priorityWRZOLE, pri
 % Zapisz : wyd³u¿enie na przêœle, zwis, spadek mocy i wzrost temperatury
 % kabla
 
+barTemp = [];
+barPower = [];
+barExtend = [];
+barSag = [];
+
 for j = 1 :   length(priorities);
     for i = 1 : length(externalTemperatures);
         global_info.SIM_NAME = strcat(priorities{j}{1}, 'TOO', priorities{j}{numel(priorities{j})-1},'temp', num2str(externalTemperatures(i)))
@@ -77,12 +83,18 @@ for j = 1 :   length(priorities);
         %plotp(sim, {'GENANI', 'ANI', 'KDN', 'ZAG', 'KLO', 'PAN', 'PRA'});
          Name = {'Transition'; 'CablePowerUsage'; 'CableDiff'; 'TemperatureChange'};
         T = table(global_info.TransitionName,global_info.CableDiff,global_info.CablePowerUsage,global_info.TemperatureChange, global_info.Sag, 'VariableNames', {'Tran', 'Lengthdiff', 'Power', 'Temp', 'Sag'})
-           
+        barExtend = [barExtend; global_info.CableDiff];
+        barTemp = [barTemp; global_info.TemperatureChange];
+        barPower = [barPower; global_info.CablePowerUsage];
+
+        barSag = [barSag; global_info.Sag];
             writetable(T, global_info.SIM_NAME,'Delimiter','\t');
             global_info.SIM_NAME
             %type global_info.SIM_NAME;
-            
-            global_info.Name = [];
+        
+       
+           
+         global_info.Name = [];
             global_info.TransitionName = [];
             global_info.CablePowerUsage = [];
             global_info.CableDiff  = [];
@@ -90,4 +102,78 @@ for j = 1 :   length(priorities);
             global_info.Sag = [];
     
     end;
+     placesNumber = numel(priorities{j})
+      
+        elementsLength = length(barPower);
+        n = placesNumber/2 - 1;
+        loopBreak = length(barPower)/4;
+        
+        barPower = barPower';
+        barExtend = barExtend';
+        barTemp = barTemp';
+        barSag = barSag'
+        
+         newPower = [];
+         newExtend = [];
+         newTemp = [];
+         newSag = [];
+         for k = 1: loopBreak
+             %barPower = [barPower(1:n:elementsLength);barPower(2:n:elementsLength); barPower(3:n:elementsLength); barPower(4:n:elementsLength)]
+            
+            
+              newPower = [newPower ;  barPower(k:n:elementsLength)];
+              newExtend = [newExtend ; barExtend(k:n:elementsLength)];
+              newTemp = [newTemp ; barTemp(k:n:elementsLength)];
+              newSag = [newSag ; barSag(k:n:elementsLength)];
+        end;
+        
+       
+        
+        
+        figure(j);
+        %title(strcat('Segment nr '), num2str(j));
+        %hold on;
+        subplot(2,2,1);
+		
+        
+       
+        
+        
+       
+  
+       
+        
+        
+        
+        bar(newPower);
+         legend('-20', '0', '20', '40');
+       
+        ylabel('Power Usage [MW]');
+        xlabel('Number of place');
+        subplot(2,2,2);
+         bar(newExtend);
+          legend('-20', '0', '20', '40');
+       
+        ylabel('CableExtension [m]');
+        xlabel('Number of place');
+         subplot(2,2,3);
+         bar(newTemp);
+          legend('-20', '0', '20', '40');
+       
+        ylabel('TemperatureChange [C]');
+        xlabel('Number of place');
+        subplot(2,2,4);
+          bar(newSag);
+        ylabel('Sag [m]');
+        xlabel('Number of place');
+    
+        legend('-20', '0', '20', '40');
+        
+       
+        
+   
+    barTemp = [];
+    barPower = [];
+    barExtend = [];
+    barSag = [];
 end;
