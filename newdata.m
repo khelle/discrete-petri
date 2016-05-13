@@ -1,4 +1,4 @@
-aluminiumSpecificHeat = 900;
+maaluminiumSpecificHeat = 900;
 
 aluminiumTemperatureResistanceCoefficient = 4;
 

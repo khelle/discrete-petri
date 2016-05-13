@@ -130,11 +130,11 @@ for j = 1 :   length(priorities);
        
         
         
-        fig =figure(j*i+ 1);
+        fig =figure(j*i+ 12);
         %title(strcat('Segment nr '), num2str(j));
         %hold on;
         
-        
+        subplot(2,2,1);
        
         
         
@@ -146,35 +146,35 @@ for j = 1 :   length(priorities);
         
         
         bar(newPower);
-        legend('20', '30', '40', '50');
+         legend('20', '30', '40', '50');
        
         ylabel('Power Usage [MW]');
         xlabel('Number of place');
-        print(fig,strcat('sim', num2str(j), num2str(i), num2str(1)),'-dpng');
-        fig = figure(j*i+ 2);
-        %subplot(2,2,2);
+        %print(fig,strcat('sim', num2str(j*i +1),'-dpng');
+        
+        subplot(2,2,2);
          bar(newExtend);
-        legend('20', '30', '40', '50');
+          legend('20', '30', '40', '50');
        
         ylabel('CableExtension [m]');
         xlabel('Number of place');
-        print(fig,strcat('sim', num2str(j), num2str(i), num2str(2)),'-dpng');
-         %subplot(2,2,3);
-        fig = figure(j*i+ 3);
+        %print(fig,strcat('sim', num2str(j*i +2),'-dpng');
+        subplot(2,2,3);
+        %fig = figure(j*i+ 3);
          bar(newTemp);
          legend('20', '30', '40', '50');
        
         ylabel('TemperatureChange [C]');
         xlabel('Number of place');
-         print(fig,strcat('sim', num2str(j), num2str(i), num2str(3)),'-dpng');
-        %subplot(2,2,4);
-        fig = figure(j*i+ 4);
+        
+        subplot(2,2,4);
+        
         bar(newSag);
         ylabel('Sag [m]');
         xlabel('Number of place');
     
         legend('20', '30', '40', '50');
-         print(fig,strcat('sim', num2str(j), num2str(i), num2str(4)),'-dpng');
+         print(fig,strcat('sim', num2str(j), num2str(i)),'-dpng');
        
         
    
