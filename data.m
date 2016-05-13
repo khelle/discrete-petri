@@ -1,145 +1,145 @@
 cableNames = { ...
-	'tWRZ_2_HER', 'tHER_2_WRZ', % todo
-	'tHER_2_LBN', 'tLBN_2_HER', % Herby - Lubliniec %
-	'tWRZ_2_BLE', 'tBLE_2_WRZ',
-	'tWRZ_2_KAW', 'tKAW_2_WRZ', % todo: DODAĆ ARC	
-	'tWRZ_2_PRJ', 'tPRJ_2_WRZ', %TODO
-	'tPRJ_2_MIJ', 'tMIJ_2_PRJ',%Poraj - Mijaczów	19,708
-	'tMIJ_2_POH', 'tPOH_2_MIJ', 
-	'tWRZ_2_GUA', 'tGUA_2_WRZ', 
-	'tWRZ_2_HCW', 'tHCW_2_WRZ', %todo: Wrzosowa - HC Walcownia
-	'tWRZ_2_JLK', 'tJLK_2_WRZ', %todo: Wrzosowa - Julianka
-	'tJLK_2_KNC', 'tKNC_2_JLK',   %Julianka - Koniecpol
-	'tKNC_2_SKC', 'tSKC_2_KNC',   %Koniecpol - Szczekociny
-	'tSKC_2_ZWA', 'tZWA_2_SKC',   %Szczekociny - Zawada
-	'tZWA_2_KOT', 'tKOT_2_ZWA',   %Zawada - Kotowice
-	'tWRZ_2_RUD', 'tRUD_2_WRZ', %todo: Wrzosowa - Rudniki
-	'tANI_2_HCW', 'tHCW_2_ANI', %todo: Aniołów - HC Walcownia
-	'tANI_2_GUA', 'tGUA_2_ANI', %todo: Aniołów - Guardian (Huta Mirów)
-	'tANI_2_RED', 'tRED_2_ANI', %todo: Aniołów - Rędziny
-	'tRED_2_RUD', 'tRUD_2_RED',   %Rędziny - Rudniki
-	'tANI_2_KDN', 'tKDN_2_ANI', %todo: Aniołów - Kiedrzyn
-	'tKDN_2_ZAG', 'tZAG_2_KDN',   %Kiedrzyn - Zagórze
-	'tANI_2_SIK', 'tSIK_2_ANI', %todo: Aniołów - Sikorskiego
-	'tKAW_2_BLE', 'tBLE_2_KAW', %todo: Kawodrza - Błeszno
-	'tKAW_2_SIK', 'tSIK_2_KAW', %todo: Kawodrza - Sikorskiego
-	'tKAW_2_KLP', 'tKLP_2_KAW', %Kawodrza - Kłobuck Płd.
-	'tKLP_2_KLO', 'tKLO_2_KLP',   %Kłobuck Płd. - Kłobuck 110
-	'tKLO_2_PAN', 'tPAN_2_KLO',   %Kłobuck 110 - Panki
-	'tPAN_2_PRA', 'tPRA_2_PAN',   %Panki - Praszka
-	'tPRA_2_OLE', 'tOLE_2_PRA', %merge! Praszka - Kluczbork 13,462|Kluczbork - Olesno 21,123
-	'tOLE_2_SOW', 'tSOW_2_OLE',   %Olesno - Sowczyce
-	'tSOW_2_DBR', 'tDBR_2_SOW',   %Sowczyce - Dobrodzień
-    'tZAG_2_KLO', 'tKLO_2_ZAG',
-    'tPOH_2_KOT', 'tKOT_2_POH'
+	'tAAL_2_AAK', 'tAAK_2_AAL', % todo
+	'tAAK_2_AAJ', 'tAAJ_2_AAK', % Herby - Lubliniec %
+	'tAAL_2_AAP', 'tAAP_2_AAL',
+	'tAAL_2_AAN', 'tAAN_2_AAL', % todo: DODAĆ ARC	
+	'tAAL_2_AAU', 'tAAU_2_AAL', %TODO
+	'tAAU_2_AAV', 'tAAV_2_AAU',%Poraj - Mijaczów	19,708
+	'tAAV_2_AAW', 'tAAW_2_AAV', 
+	'tAAL_2_AAQ', 'tAAQ_2_AAL', 
+	'tAAL_2_AAR', 'tAAR_2_AAL', %todo: Wrzosowa - HC Walcownia
+	'tAAL_2_ABB', 'tABB_2_AAL', %todo: Wrzosowa - Julianka
+	'tABB_2_ABA', 'tABA_2_ABB',   %Julianka - Koniecpol
+	'tABA_2_AAZ', 'tAAZ_2_ABA',   %Koniecpol - Szczekociny
+	'tAAZ_2_AAY', 'tAAY_2_AAZ',   %Szczekociny - Zawada
+	'tAAY_2_AAX', 'tAAX_2_AAY',   %Zawada - Kotowice
+	'tAAL_2_AAS', 'tAAS_2_AAL', %todo: Wrzosowa - Rudniki
+	'tAAA_2_AAR', 'tAAR_2_AAA', %todo: Aniołów - HC Walcownia
+	'tAAA_2_AAQ', 'tAAQ_2_AAA', %todo: Aniołów - Guardian (Huta Mirów)
+	'tAAA_2_AAT', 'tAAT_2_AAA', %todo: Aniołów - Rędziny
+	'tAAT_2_AAS', 'tAAS_2_AAT',   %Rędziny - Rudniki
+	'tAAA_2_AAB', 'tAAB_2_AAA', %todo: Aniołów - Kiedrzyn
+	'tAAB_2_AAC', 'tAAC_2_AAB',   %Kiedrzyn - Zagórze
+	'tAAA_2_AAM', 'tAAM_2_AAA', %todo: Aniołów - Sikorskiego
+	'tAAN_2_AAP', 'tAAP_2_AAN', %todo: Kawodrza - Błeszno
+	'tAAN_2_AAM', 'tAAM_2_AAN', %todo: Kawodrza - Sikorskiego
+	'tAAN_2_AAO', 'tAAO_2_AAN', %Kawodrza - Kłobuck Płd.
+	'tAAO_2_AAD', 'tAAD_2_AAO',   %Kłobuck Płd. - Kłobuck 110
+	'tAAD_2_AAE', 'tAAE_2_AAD',   %Kłobuck 110 - Panki
+	'tAAE_2_AAF', 'tAAF_2_AAE',   %Panki - Praszka
+	'tAAF_2_AAG', 'tAAG_2_AAF', %merge! Praszka - Kluczbork 13,462|Kluczbork - Olesno 21,123
+	'tAAG_2_AAH', 'tAAH_2_AAG',   %Olesno - Sowczyce
+	'tAAH_2_AAI', 'tAAI_2_AAH',   %Sowczyce - Dobrodzień
+    'tAAC_2_AAD', 'tAAD_2_AAC',
+    'tAAW_2_AAX', 'tAAX_2_AAW'
     } 
 	
 	powerUsages = [ % MW
-		25,997, % WRZ_2_HER
-		21,384, %HER_2_LBN
-		-3,41, %WRZ_2_BLE
-		0,558,%WRZ_2_KAW
-		6,389,%WRZ_2_PRJ
-		-0,081,%PRJ_2_MIJ
-		-0,469,%MIJ_2_POH
-		-5,163,%WRZ_2_GUA
-		8,182,%WRZ_2_HCW
-		-1,4,%WRZ_2_JLK
-		6,402,%JLK-KNC
-		-9,579,%KNC-SKC
-		11,519,%SKC-ZWA
-		9,878,%ZWA-KOT
-		-3,018,%WRZ-RUD
-		-3,832,%ANI-HCW
-		-3,317,%ANI-GUA
-		7,557,%ANI-RED
-		1,852,%RED-RUD
-		-7,743,%ANI-KDN
-		12,183,%KDN-ZAG
-		-5,175,%ANI-SIK
-		-1,21,%KAW-BLE
-		-2,985,%KAW-SIK
-		-13,853,%KAW-KLP
-		-16,492,%KLP-KLO
-		23,495,%KLO-PAN
-		-18,852,%PAN-PRA
-		-1,116,%PRA-OLE
-		1,117,%OLE-SOW
-		1,277%SOW-DBR
-		18,118,%ZAG-KLO
-		0,469%POH-KOT
+		25,997, % AAL_2_AAK
+		21,384, %AAK_2_AAJ
+		-3,41, %AAL_2_AAP
+		0,558,%AAL_2_AAN
+		6,389,%AAL_2_AAU
+		-0,081,%AAU_2_AAV
+		-0,469,%AAV_2_AAW
+		-5,163,%AAL_2_AAQ
+		8,182,%AAL_2_AAR
+		-1,4,%AAL_2_ABB
+		6,402,%ABB-ABA
+		-9,579,%ABA-AAZ
+		11,519,%AAZ-AAY
+		9,878,%AAY-AAX
+		-3,018,%AAL-AAS
+		-3,832,%AAA-AAR
+		-3,317,%AAA-AAQ
+		7,557,%AAA-AAT
+		1,852,%AAT-AAS
+		-7,743,%AAA-AAB
+		12,183,%AAB-AAC
+		-5,175,%AAA-AAM
+		-1,21,%AAN-AAP
+		-2,985,%AAN-AAM
+		-13,853,%AAN-AAO
+		-16,492,%AAO-AAD
+		23,495,%AAD-AAE
+		-18,852,%AAE-AAF
+		-1,116,%AAF-AAG
+		1,117,%AAG-AAH
+		1,277%AAH-AAI
+		18,118,%AAC-AAD
+		0,469%AAW-AAX
 		];
 	
 	currentI = [ % kA
-  0.138,%WRZ-HER
-  0.115,%HER-LBN
-  0.019,%WRZ-BLE
-  0.006,%WRZ-KAW
-  0.035,%WRZ-PRJ
-  0.001,%PRJ-MIJ
-  0.004,%MIJ-POH
-  0.027,%WRZ-GUA
-  0.043,%WRZ-HCW
-  0.01,%WRZ-JLK
-  0.034,%JLK-KNC
-  0.051,%KNC-SKC
-  0.062,%SKC-ZWA
-  0.053,%ZWA-KOT
-  0.024,%WRZ-RUD
-  0.02,%ANI-HCW
-  0.017,%ANI-GUA
-  0.04,%ANI-RED
-  0.016,%RED-RUD
-  0.056,%ANI-KDN
-  0.075,%KDN-ZAG
-  0.029,%ANI-SIK
-  0.007,%KAW-BLE
-  0.016,%KAW-SIK
-  0.084,%KAW-KLP
-  0.095,%KLP-KLO
-  0.126,%KLO-PAN
-  0.102,%PAN-PRA
-  0.006,%PRA-OLE
-  0.006,%OLE-SOW
-  0.007,%SOW-DBR
-  0.102,%ZAG-KLO
-  0.033%POH-KOT
+  0.138,%AAL-AAK
+  0.115,%AAK-AAJ
+  0.019,%AAL-AAP
+  0.006,%AAL-AAN
+  0.035,%AAL-AAU
+  0.001,%AAU-AAV
+  0.004,%AAV-AAW
+  0.027,%AAL-AAQ
+  0.043,%AAL-AAR
+  0.01,%AAL-ABB
+  0.034,%ABB-ABA
+  0.051,%ABA-AAZ
+  0.062,%AAZ-AAY
+  0.053,%AAY-AAX
+  0.024,%AAL-AAS
+  0.02,%AAA-AAR
+  0.017,%AAA-AAQ
+  0.04,%AAA-AAT
+  0.016,%AAT-AAS
+  0.056,%AAA-AAB
+  0.075,%AAB-AAC
+  0.029,%AAA-AAM
+  0.007,%AAN-AAP
+  0.016,%AAN-AAM
+  0.084,%AAN-AAO
+  0.095,%AAO-AAD
+  0.126,%AAD-AAE
+  0.102,%AAE-AAF
+  0.006,%AAF-AAG
+  0.006,%AAG-AAH
+  0.007,%AAH-AAI
+  0.102,%AAC-AAD
+  0.033%AAW-AAX
   ];
 	
 	cableTypes = {
-	'AFL6 120', 'AFL6 120', %tWRZ_2_HER
-	'AFL6 120', 'AFL6 120', %tHER_2_LBN
-	'AFL6 240', 'AFL6 240',%'tWRZ_2_BLE', 
-	'AFL6 240', 'AFL6 240',%'tWRZ_2_KAW', 
-	'AFL6 120', 'AFL6 120',	%'tWRZ_2_PRJ', 
-	'AFL6 120', 'AFL6 120',	%'tPRJ_2_MIJ', 
-	'AFL6 120', 'AFL6 120',	%'tMIJ_2_POH', 
-	'AFL6 120', 'AFL6 120',	%'tWRZ_2_GUA', 
-	'AFL6 240', 'AFL6 240',	% 'tWRZ_2_HCW',
-	'AFL6 185', 'AFL6 185',	%'tWRZ_2_JLK', 
-	'AFL6 185', 'AFL6 185',	%'tJLK_2_KNC', 
-	'AFL6 185', 'AFL6 185',	%'tKNC_2_SKC', 
-	'AFL6 240', 'AFL6 240',	%'tSKC_2_ZWA', 
-	'AFL6 240', 'AFL6 240',	%'tZWA_2_KOT', 
-	'AFL6 240', 'AFL6 240',	%'tWRZ_2_RUD', 
-	'AFL6 240', 'AFL6 240',	%'tANI_2_HCW', 
-	'AFL6 185', 'AFL6 185',	%'tANI_2_GUA', 
-	'AFL6 240', 'AFL6 240',	%'tANI_2_RED', 
-	'AFL6 240', 'AFL6 240',	%'tRED_2_RUD', 
-	'AFL6 240', 'AFL6 240',	%'tANI_2_KDN', 
-	'AFL6 240', 'AFL6 240',	%'tKDN_2_ZAG', 
-	'AFL6 240', 'AFL6 240',	%'tANI_2_SIK',
-	'AFL6 240', 'AFL6 240',	%'tKAW_2_BLE'
-	'AFL6 240', 'AFL6 240',	%'tKAW_2_SIK'
-	'AFL6 240', 'AFL6 240',%'tKAW_2_KLP'
-	'AFL6 185', 'AFL6 185',	%'tKLP_2_KLO'
-	'AFL6 240', 'AFL6 240',	%'tKLO_2_PAN'
-	'AFL6 240', 'AFL6 240',	%'tPAN_2_PRA'
-	'AFL6 240', 'AFL6 240',	%'tPRA_2_OLE'
-	'AFL6 240', 'AFL6 240', %'tOLE_2_SOW'
-	'AFL6 240',	'AFL6 240'%'tSOW_2_DBR'		
-    'AFL6 185', 'AFL6 185'%'tZAG_2_KLO'
-    'AFL6 240', 'AFL6 240'%'tPOH_2_KOT'
+	'AFL6 120', 'AFL6 120', %tAAL_2_AAK
+	'AFL6 120', 'AFL6 120', %tAAK_2_AAJ
+	'AFL6 240', 'AFL6 240',%'tAAL_2_AAP', 
+	'AFL6 240', 'AFL6 240',%'tAAL_2_AAN', 
+	'AFL6 120', 'AFL6 120',	%'tAAL_2_AAU', 
+	'AFL6 120', 'AFL6 120',	%'tAAU_2_AAV', 
+	'AFL6 120', 'AFL6 120',	%'tAAV_2_AAW', 
+	'AFL6 120', 'AFL6 120',	%'tAAL_2_AAQ', 
+	'AFL6 240', 'AFL6 240',	% 'tAAL_2_AAR',
+	'AFL6 185', 'AFL6 185',	%'tAAL_2_ABB', 
+	'AFL6 185', 'AFL6 185',	%'tABB_2_ABA', 
+	'AFL6 185', 'AFL6 185',	%'tABA_2_AAZ', 
+	'AFL6 240', 'AFL6 240',	%'tAAZ_2_AAY', 
+	'AFL6 240', 'AFL6 240',	%'tAAY_2_AAX', 
+	'AFL6 240', 'AFL6 240',	%'tAAL_2_AAS', 
+	'AFL6 240', 'AFL6 240',	%'tAAA_2_AAR', 
+	'AFL6 185', 'AFL6 185',	%'tAAA_2_AAQ', 
+	'AFL6 240', 'AFL6 240',	%'tAAA_2_AAT', 
+	'AFL6 240', 'AFL6 240',	%'tAAT_2_AAS', 
+	'AFL6 240', 'AFL6 240',	%'tAAA_2_AAB', 
+	'AFL6 240', 'AFL6 240',	%'tAAB_2_AAC', 
+	'AFL6 240', 'AFL6 240',	%'tAAA_2_AAM',
+	'AFL6 240', 'AFL6 240',	%'tAAN_2_AAP'
+	'AFL6 240', 'AFL6 240',	%'tAAN_2_AAM'
+	'AFL6 240', 'AFL6 240',%'tAAN_2_AAO'
+	'AFL6 185', 'AFL6 185',	%'tAAO_2_AAD'
+	'AFL6 240', 'AFL6 240',	%'tAAD_2_AAE'
+	'AFL6 240', 'AFL6 240',	%'tAAE_2_AAF'
+	'AFL6 240', 'AFL6 240',	%'tAAF_2_AAG'
+	'AFL6 240', 'AFL6 240', %'tAAG_2_AAH'
+	'AFL6 240',	'AFL6 240'%'tAAH_2_AAI'		
+    'AFL6 185', 'AFL6 185'%'tAAC_2_AAD'
+    'AFL6 240', 'AFL6 240'%'tAAW_2_AAX'
 }
 
 % lines in m 

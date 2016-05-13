@@ -6,9 +6,9 @@ global global_info;
 
 placeNumber = 1;
 
-gen1 = strcmp(transition.name, 'tGEN_3');
-gen2 = strcmp(transition.name, 'tGEN_4');
-gen3 = strcmp(transition.name, 'tGEN_AT1');
+gen1 = strcmp(transition.name, 'tGEN_ZZY');
+gen2 = strcmp(transition.name, 'tGEN_ZZX');
+gen3 = strcmp(transition.name, 'tGEN_ZZZ');
 
 
 generators = gen1 || gen2 || gen3;
@@ -58,7 +58,7 @@ powerGEN4 = 10^9;
 %transition
 %Add/Change color=power and display lenghtening with power usage
 switch 	transition.name
-    case 'tGEN_AT1'
+    case 'tGEN_ZZZ'
         transition.new_color = {num2str(powerAT1)};
         transition.override = 1;
         
@@ -66,7 +66,7 @@ switch 	transition.name
         disp([transition.name]);
         disp(['generated: ', num2str(powerAT1/10^6), ' [MWatts],']);
         
-    case 'tGEN_3'
+    case 'tGEN_ZZY'
         transition.new_color = {num2str(powerGEN3)};
         transition.override = 1;
         
@@ -74,7 +74,7 @@ switch 	transition.name
         disp([transition.name]);
         disp(['generated: ', num2str(powerAT1/10^6), ' [MWatts],']);
         
-    case 'tGEN_4'
+    case 'tGEN_ZZX'
         transition.new_color = {num2str(powerGEN4)};
         transition.override = 1;
                 
