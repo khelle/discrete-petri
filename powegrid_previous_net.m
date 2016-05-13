@@ -2,10 +2,6 @@
 
 function [png] = powergrid_pdf()
 
-
-%lengths of cables
-
-
 png.PN_name = 'Powergrid Simulation';
 png.set_of_Ps = {...
     'JNW','AAC','AAB','AAA','AAQ','AAL','AAP','AAM','AAN','AAO',...

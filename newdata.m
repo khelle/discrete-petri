@@ -1,11 +1,6 @@
 maaluminiumSpecificHeat = 900;
-
 aluminiumTemperatureResistanceCoefficient = 4;
-
-
-
 baseTemperature = 20;
-
 cableCoilExpansionFactor = 1.15E-5;
 
 cableLengths = ...
@@ -192,7 +187,6 @@ cableTypes{32,2} = 'AFL6 185';
 cableTypes{33,2} = 'AFL6 240';
 cableTypes{34,2} = 'AFL6 120';
 
-
 currentI = ...
   [0.0138 0.0138;
    0.0115 0.0115;
@@ -230,8 +224,6 @@ currentI = ...
    0.0115 0.0115
    ] * 10^3;
 
-
-
 powerUsages = ...
   [25.997 25.997;
    21.384 21.384;
@@ -266,9 +258,8 @@ powerUsages = ...
    1.277 1.277;
    18.118 18.118;
    0.469 0.469;
-   21.384, 21.384   ];
-   
- powerUsages = abs(powerUsages) * 10^6;  
+   21.384, 21.384];
+powerUsages = abs(powerUsages) * 10^6;  
 
 thermalExpansionFactors = [1.923E-5 1.918E-5 1.95E-5];
 

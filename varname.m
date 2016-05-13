@@ -1,3 +1,3 @@
 function out = varname(var)
-  out = inputname(1);
+	out = inputname(1);
 end

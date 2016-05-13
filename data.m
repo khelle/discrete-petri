@@ -35,8 +35,8 @@ cableNames = { ...
     } 
 	
 	powerUsages = [ % MW
-		25,997, % AAL_2_AAK
-		21,384, %AAK_2_AAJ
+		25,997,%AAL_2_AAK
+		21,384,%AAK_2_AAJ
 		-3,41, %AAL_2_AAP
 		0,558,%AAL_2_AAN
 		6,389,%AAL_2_AAU
@@ -179,20 +179,17 @@ cableLengths = [ ...
     19576, 19576
 ]
 
-
-
-
 %TODO tabela z I dla kabli
-electricCurrent = 1; %AMPERS
+electricCurrent = 1;		%AMPERS
 cableTypeNames = {'AFL6 120','AFL6 185','AFL6 240'};
-aluminiumTemperatureResistanceCoefficient = 4,4 /1000; % K ^ -1 
-aluminiumSpecificHeat = 900; % J/(kg·K)
-cableResistanceIn20Cels = [0.2214, 0.1482, 0.1172] * 10^-3; % ohm/m
+aluminiumTemperatureResistanceCoefficient = 4,4 /1000; 		% K ^ -1 
+aluminiumSpecificHeat = 900;		% J/(kg·K)
+cableResistanceIn20Cels = [0.2214, 0.1482, 0.1172] * 10^-3; 	% ohm/m
 cableMassPerKm = [518, 769, 952] * 10^-3;
-baseTemperature = 20; % celsius
-% in 10^(-6)/C
+baseTemperature = 20;		% celsius
+	% in 10^(-6)/C
 cableCoilExpansionFactor  = 11.5 * 10^-6;
-thermalExpansionFactors = [19.23, 19.18, 19.5] * 10^-6 % 10^-6 / C;
+thermalExpansionFactors = [19.23, 19.18, 19.5] * 10^-6 		% 10^-6 / C;
 
 
 CableName2CableLength = containers.Map(cableNames,cableLengths);
