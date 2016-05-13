@@ -11,8 +11,34 @@
 \usepackage{multirow}
 \usepackage[autostyle]{csquotes}
 \usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage{indentfirst}
+\usepackage{appendix}
 
 \addbibresource{discrete-petri.bib}
+
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    frame=lrtb,
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    %numbers=left,%
+    %numberstyle={\tiny \color{black}},% size of the numbers
+    %numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
 
 \geometry{
 	a4paper,
@@ -54,7 +80,6 @@
 %
 \section{Foreword}
 \label{cha:foreword}
-\paragraph{}
 
 For our project in "Modeling, simulation, and performance analysis of discrete event systems with Petri-Nets", we have chosen to simulate a part of power grid used in Poland. Our statistical analysis takes into account both physical properties of cables and real topology on which power grid bases on. The reason for choosing this project is the fact that we believe Petri-nets are perfect tools for simulation such scenario, and we would like to evaluate if this statement will hold true throughout the project. This report will be divided in several parts and cover input data, simulation files, diagrams and received results.
 
@@ -62,30 +87,26 @@ For our project in "Modeling, simulation, and performance analysis of discrete e
 %
 \section{Introduction}  
 \label{cha:introduction}
-\paragraph{}
 
 Rising consumption of electrical energy and its strategic meaning in economy of highly developed countries has translated into creation of necessity to guarantee safety of its supply to customers. The fundamental limitations regarding the capacity of modern electrical networks are set because of physical properties of materials used in their construction. Each material has its own set of properties and cost of use, both of which have to be taken into consideration by electrical engineers in phase of designing new and maintaining existing power grid connections. For the purpose of current document we had chosen a part of the power grid existing in Poland and simulated what would happen if links between parts of the grid were overloaded - where would the power go and how would it affect the state of the network. Specifically, we tried to simulate how much would cables extend if more power were transmitted through them and checked whether there exists possibilities of accidents.
 
 \subsection{Problem definition}
 \label{sec:problemDefinition}
-\paragraph{}
 
 The biggest problem connected to creation of new and maintaining existing power grids is the fact that depending on the load in the given unit of time the physical reaction of power grid infrastructure can be different. The voltage transported through the cables make huge impact on them changing their characteristics such as length, temperature and others. What's more they are also dependent on external factors - the time of the day, the season, air temperature etc. The plethora of scenarios that must be taken into consideration makes fixing power grids hard and expensive.
 
 \subsection{Goals} 
 \label{sec:goals}
-\paragraph{}
 
 The are few goals of this project. The first one is to check whether Petri-nets are well-fit tool for purpose of modeling and evaluating electrical networks. We will decide on this depending on the results we get from simulating existing power grid. The second one is to validate existing power grid topology, check whether it is optimal and efficient or has the used topology started to show its age. 
 
 \subsection{Sources}
 \label{sec:sources}
-\paragraph{}
+
 The sources used in this project are the topology of Polish power grid with its physical properties, average power consumption data scaled up to appropriate values. The theory we used for the purpose of this document was taken from our our understanding of basics of physics and electrical engineering, science magazines and information we gained while searching internet for suitable articles on this matter.
 
 \subsection{Methods}
 \label{sec:methods}
-\paragraph{}
 
 As a tool for modeling and simulation the existing power grid we will use Petri-nets. The places will represent customers while transitions will represent cables. The markers will be used as a mean of representing electrical movement. The tool we will use for this project is GPenSIM created by Reggie Davidrajuh \cite{Art2}. The details of used method will be described further in its own section.
 
@@ -95,13 +116,11 @@ As a tool for modeling and simulation the existing power grid we will use Petri-
 %
 \section{Theory}
 \label{cha:theory}
-\paragraph{}
 
 In this section we will try to describe basic concepts that needs to be known by the reader to properly understand this document.
 
 \subsection{Petri networks}
 \label{sec:petriNetworks}
-\paragraph{}
 
 \textbf{Petri networks} (Petri-nets) is one of several mathematical modeling languages for the description of distributed systems. A Petri net is a directed bipartite graph, in which the nodes represent transitions (i.e. events that may occur, represented by bars) and places (i.e. conditions, represented by circles). The directed arcs describe which places are pre- and/or post- conditions marked  as arrows. \cite{Art3}
 
@@ -133,7 +152,6 @@ The second extension of Petri-nets used are \textbf{Prioritized Petri-nets}. The
 
 \subsection{Thermodynamics}
 \label{sec:thermodynamics}
-\paragraph{}
 
 For the purpose of this project we had to use basic information from physics. The main concepts we had to use are fundamentals of thermodynamics.\\
 
@@ -189,7 +207,7 @@ where:
 \item $\Delta T$ is the relative change of temperature.\\
 \end{itemize}
 
-The thermal resistance coefficient depends on the material for which we are making calculations. In our project we focus on electrical ALF wires which are made of aluminium, so we can assume:
+The thermal resistance coefficient depends on the material for which we are making calculations. In our project we focus on electrical AFL wires which are made of aluminium, so we can assume:
 
 \begin{equation}
 \alpha = 2.4\e{-5} [K^{-1}]
@@ -197,13 +215,12 @@ The thermal resistance coefficient depends on the material for which we are maki
 
 \subsection{Power transfer and power loss}
 \label{sec:powerTransferAndPowerLoss}
-\paragraph{}
 
 The second concept that needs to be understand to properly simulate powergrid is the \textbf{energy loss}.\\ 
 
 Transmitting electricity at high voltage reduces the fraction of energy lost to resistance, which varies depending on the specific conductors, the current flowing, and the length of the transmission line. Factors that affect the resistance, and thus loss, of conductors used in transmission and distribution lines include temperature, spiraling, and the skin effect. The resistance of a conductor increases with its temperature. Temperature changes in electric power lines can have a significant effect on power losses in the line. Spiraling, which refers to the increase in conductor resistance due to the way stranded conductors spiral about the center, also contributes to increases in conductor resistance. The skin effect causes the effective resistance of a conductor to increase at higher alternating current frequencies. \cite{Art8}\\
 
-The power loss can be measured with:
+The power loss can be measured with Joule-Lenz law:
 
 \begin{equation}
 \Delta P_0 = 3I^{2}R = 3\left(\frac {S}{\sqrt{3}U}\right) R = \frac {S^{2}}{U^{2}} R = \frac {P^{2} + Q^{2}}{U^{2}} R
@@ -230,18 +247,38 @@ P = \sqrt{3}UI\cos{\phi}
 I = \frac {P}{\sqrt{3}U\cos{\phi}}
 \end{equation}
 
+\subsection{Cable sag}
+
+We have calculated cable sag (how high is the lowest point in cable against the ground) basing on simplified formula:
+
+\begin{equation}
+f = \frac{a^2 g}{8 \rho}
+\end{equation}
+where:
+\begin{description}
+\item [a] - segment length
+\item [g] - cable density per length unit
+\item [$\rho$] - cable tension in lowest point\\
+\end{description}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.9]{schemas/sag.jpg}
+\caption{\label{fig:sag}}
+\end{figure}
+
 \clearpage
+
 
 % -------------------------------------------------------------
 %
 \section{Methods}
 \label{cha:methods}
-\paragraph{}
-Considering the low amount of time dedicated to the project and relative little experience in chosen subject, we limited the analysis to two properties -- thermal expansion and energy loss -- while transporting power through power lines. All calculations were made using formulas put in chapter \ref{cha:theory}, the properties of ALF power lines and external factors.
+
+Considering the low amount of time dedicated to the project and relative little experience in chosen subject, we limited the analysis to two properties -- thermal expansion and energy loss -- while transporting power through power lines. All calculations were made using formulas put in chapter \ref{cha:theory}, the properties of AFL power lines and external factors.
 
 \subsection{Assumptions}
 \label{sec:assumptions}
-\paragraph{}
 
 The simulated power grid consist of AFL-6 120, 185  and 240 power lines showed in figure \ref{fig:img1}. Their properties have been put in table \ref{tab:aflProperties}.
 
@@ -309,7 +346,6 @@ Segment length                    & --                        & 185 m           
 
 \subsection{Power grid}
 \label{sec:powerGrid}
-\paragraph{}
 
 The power grid consists of three generators and N customers. We have modeled approximately realistic distances between them. Total length of all power lines is M. The topology has been shown in figure \ref{fig:img3}.\\\\
 
@@ -325,7 +361,6 @@ Simulation has been divided into several sub-simulations of which each one repre
 
 \subsection{Petri-Net model}
 \label{sec:petriNetModel}
-\paragraph{}
 
 The power grid showed in figure \ref{sec:powerGrid} has been translated to Petri-Net model. To design it properly we have used two extension of Petri-networks - colors and priorities.\\
 
@@ -353,7 +388,6 @@ The graphic representation of described model is shown in figure \ref{fig:img4}.
 %
 \section{Matlab approach}
 \label{cha:matlabApproach}
-\paragraph{}
 
 % W pliku PDF zawarlismy definicje sieci, miejsc, przejsc i polaczen miedzy nimi. W pliku data.mat umiescilismy dane liczbowe niezbedne do przeprowadzanie symulacje. Zdecydowalismy sie na wydzielenie danych liczbowych do osobnego pliku aby poprawic czytelnosc kodu i zwiekszyc reuzywalnosc. Do powiazania danych ze soba uzylismy hasz-map ze wzgledu na latwosc wykorzystania i wzgledna efektywnosc. Dzialania wszystkich przejsc zostaly zamodelowane w pliku COMMON_PRE ze wzgledu na faktu, ze wszystkie przejscia dzialaja na tej samej zasadzie, w szczegolnosci w pliku COMMON_PRE nastepuja obliczenia zwiazane z wydluzaniem sie kabla pod wplywem badanych przez nas czynnikow oraz uwzgladnienai spadkow mocy pobieranej przez poszczeglonych odbiorcow na trasie symulacji. W [glownym pliku] zawarlismy dane niezbedne do przeorwadzenia wszystkich symulacji.
 
@@ -361,19 +395,16 @@ Our project consists of file containing the definition of Petri Net - places, tr
 
 \subsection{Main Simulation File}
 \label{sec:mainSimulationFile}
-\paragraph{}
 
-Main simulation file contains loops which we used to perform a number of different simulations depending on two factors - parts of Net (routes of interest along which power is provided from generators) and external temperature (huge inpact on cable lengthening). It contains both initial set of markers distributed along generators to set which of them is active and set of priorities indicating which segment of network we are simulating.
+Main simulation file contains loops which we used to perform a number of different simulations depending on two factors - parts of Net (routes of interest along which power is provided from generators) and external temperature which has huge impact on cable lengthening. It contains both initial set of markers distributed along generators to set which of them is active and set of priorities indicating which segment of network we are simulating.
 
 \subsection{Loading real data}
 \label{sec:loadingRealData}
-\paragraph{}
 
 To bind the data together we have used hash-maps because of their relative efficiency and ease of use. They contain values for power usage, electrical current, type of used cable, their weight. All values are bound to transition names, which afterwards are used in common preprocessor, without need to model each line separately.
 
 \subsection{Token generator and coloring}
 \label{sec:tokenGeneratorAndColoring}
-\paragraph{}
 
 Instead of use several number of tokens to simulate unit of power from generators we decided to use only one colored marker. Transition which represents one of the generators puts number of power on marker it 'generates' and later this color is being reduced with each transition, or we can say it is consumed by clients.
 
@@ -381,19 +412,91 @@ Instead of use several number of tokens to simulate unit of power from generator
 %                                      
 \section{Testing, analysis and results}   
 \label{cha:testingAnalysisAndResults}
-\paragraph{}
 
-We have performed several simulations which have taken into consideration external temperatures ranging from -20 C to +40 C. We have also looked seperately at different parts of power grid. 
+We have performed several simulations which have taken into consideration external temperatures ranging from 20 $^{\circ}$  C to 50 $^{\circ}$  C. We have also looked separately at different parts of power grid. To simplify equations we have make few assumptions, such as the amount of heat radiated from cable and the change of tension of cable depending on temperature. We have analyzed:\\
 
+\begin{itemize}
+\item how much will cable heat depending on external temperature and electrical current flowing through it
+\item how long will cable extend on one 185 meters long segment
+\item how much will cable lowest point lowers with cable temperature changes (sag)
+\item how much power is consumed in each place of net based on statistical data\\
+\end{itemize}
 
-\paragraph{}
-Text Text Text
+We have visualized the data on bar plots, which depicts changes in each places in all simulation variants (with changing external temperatures). Each image depicts simulation on different part of power grid.\\
 
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img5_1.png}
+\label{fig:img5_1}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img5_2.png}
+\label{fig:img5_2}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img6_1.png}
+\label{fig:img6_1}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img6_2.png}
+\label{fig:img6_2}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img7_1.png}
+\label{fig:img7_1}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img7_2.png}
+\label{fig:img7_2}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img8_1.png}
+\label{fig:img8_1}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img8_2.png}
+\label{fig:img8_2}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img9_1.png}
+\label{fig:img9_1}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.44]{schemas/img9_2.png}
+\label{fig:img9_2}
+\end{figure}
+
+\clearpage
+
+After analyzing we have found out that the maximal increase of cable sag is 1.26 meters, which still fits in the sag norms. Keep in mind hovewer there are a lot of other factors to take into account (e.g. ice on cables, wind, etc.). The maximum temperature change in  cable was 40 $^{\circ}$ C. In also corresponds to range of values in which cable can operate. We have used statistical data with electrical current, but one can easily make another simulations which test cables with their maximal electrical current load.
 % -------------------------------------------------------------
 %
 \section{Challenges and solutions}    
 \label{cha:ChallengesAndSolutions}
-\paragraph{}
 
 The work put to this project came together with few difficulties we had to deal with.\\
 
@@ -418,7 +521,6 @@ Last, but not least, we had to find a proper way to represent electrical power a
 %
 \section{Conclusion}
 \label{cha:conclusion}
-\paragraph{}
 
 For the purpose of our project in "Modeling, simulation, and performance analysis of discrete event systems with Petri-Nets", we had simulated a part of power grid used in Poland. Our statistical analysis took into account both physical properties of cables and real topology on which power grid bases on. Using GPenSim tool \cite{Art2} we were able to model the topology of the grid into Petri-net model and then simulate its behaviour. We put focus mainly on how the cables extend and how far their temperature rises and were able to measure values of both of them. Unfortunately, the Petri-nets turned out not to be well-fit tools for this kind of task as we had initially assumed. During the project we faced many problems, but were able to solve them.\\To sum up, we believe our project was a success, we have measured everything we initially wanted despite hardships and proved things like that can be done with Petri-Nets, event if they are not perfectly convenient solution to this kind of tasks.
 
@@ -428,6 +530,8 @@ For the purpose of our project in "Modeling, simulation, and performance analysi
 % Ze względu na wzrost średnich temperatur w Polsce (lub w ogólnyości na świecie) oraz stały wzrost zużycia energii elektrycznej w państawach rozwiniętych należy zwracać coraz baczniejszą uwagę na wpływ temperatur i przesyłanej mocy na stan sieci. Brak odpowiednich wyliczeń oraz prognoz może prowadzić do sytuacji w których kable zwisające na zbyt niskiej wysokości mogą prowadzić do wypadków z udziałem maszyn rolniczych lub innych pojazdów. Jest to też aspekt który każdy użytkownik może obserwować gołym okiem - np. widzimy wysoko zwisające kable w ciągu chłodnych miesięcy zimowych lub nisko podczas letnich upałów.
 
 % Ze względu na szeroki wachlarz / szeroki zakres możliwości sieci Petriego jak i narzędzia GPENSIM model można wykorzystać zarówno do rozszerzenia dokładności symulacji wydłużania kabli jak i szeregu innych symulacji i analiz (np. strat mocy).
+
+
 
 % -------------------------------------------------------------
 %
@@ -453,5 +557,28 @@ For the purpose of our project in "Modeling, simulation, and performance analysi
 %6: https://pl.wikipedia.org/wiki/Rozszerzalno%C5%9B%C4%87_cieplna
 %7: https://pl.wikipedia.org/wiki/Temperaturowy_wsp%C3%B3%C5%82czynnik_rezystancji
 %8: https://en.wikipedia.org/wiki/Electric_power_transmission
+
+\clearpage
+
+\appendix
+\section{Source code}
+\begin{appendices}
+%Source code listings:
+\subsection{powergrid.m}
+\lstinputlisting{src/powergrid.m}
+\subsection{powergrid\_pdf.m}
+\lstinputlisting{src/powergrid_pdf.m}
+\subsection{COMMON\_PRE.m}
+\lstinputlisting{src/COMMON_PRE.m}
+\subsection{calculateCableLength.m}
+\lstinputlisting{src/calculateCableLength.m}
+\subsection{calculateCableMass.m}
+\lstinputlisting{src/calculateCableMass.m}
+\subsection{calculateTemperatureResistance.m}
+\lstinputlisting{src/calculateTemperatureResistance.m}
+\subsection{calculateTensionFromTemperature.m}
+\lstinputlisting{src/calculateTensionFromTemperature.m}
+
+\end{appendices}
 
 \end{document}
